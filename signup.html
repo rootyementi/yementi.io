@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Yementi Portal</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 40px 20px; display: flex; align-items: center; justify-content: center; }
+        .signup-container { background: rgba(255,255,255,0.98); border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); padding: 50px 40px; max-width: 500px; width: 100%; animation: slideIn 0.5s ease; }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .logo { font-size: 34px; margin-bottom: 25px; color: #667eea; font-weight: bold; text-align: center; }
+        h2 { color: #333; margin-bottom: 15px; font-size: 28px; text-align: center; }
+        .subtitle { color: #666; text-align: center; margin-bottom: 30px; line-height: 1.6; }
+        .form-group { margin-bottom: 24px; }
+        label { display: block; color: #444; font-weight: 500; margin-bottom: 8px; font-size: 15px; }
+        input { width: 100%; padding: 16px 20px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 16px; outline: none; transition: all 0.3s ease; background: white; }
+        input:focus { border-color: #667eea; box-shadow: 0 0 0 4px rgba(102,126,234,0.15); }
+        .password-toggle { float: right; color: #999; cursor: pointer; font-size: 18px; user-select: none; }
+        .checkbox-group { display: flex; align-items: flex-start; gap: 12px; font-size: 13px; color: #666; margin-bottom: 25px; }
+        .checkbox-group input { width: auto; margin-top: 4px; cursor: pointer; }
+        .checkbox-group label { display: inline; font-weight: normal; cursor: pointer; transition: all 0.2s ease; padding: 4px 8px; border-radius: 6px; }
+        .checkbox-group:hover label { background: #f8f9fa; color: #333; }
+        .checkbox-group input:checked + label { background: rgba(102,126,234,0.1); color: #333; font-weight: 500; }
+        .btn { width: 100%; padding: 18px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 12px; font-size: 18px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; margin-top: 10px; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(102,126,234,0.4); }
+        .links-container { display: flex; justify-content: space-between; margin-top: 25px; font-size: 14px; }
+        .links-container a { color: #667eea; text-decoration: none; transition: all 0.2s; padding: 5px 10px; border-radius: 8px; background: rgba(102,126,234,0.05); }
+        .links-container a:hover { background: rgba(102,126,234,0.15); color: #5a6fd6; }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 30px; text-align: left; }
+        .feature-box { background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 18px 14px; border-radius: 12px; border-left: 4px solid #667eea; }
+        .feature-box h4 { color: #333; font-size: 15px; margin-bottom: 8px; }
+        .feature-box p { font-size: 13px; color: #666; line-height: 1.5; }
+        footer { margin-top: 25px; color: #777; font-size: 14px; text-align: center; }
+        @media (max-width: 600px) { .features-grid { grid-template-columns: 1fr; text-align: center;} }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <div class="logo">💎 Yementi Portal</div>
+        <h2>Create Your Account</h2>
+        <p class="subtitle">Join our AI-powered web hosting platform and get started with GPU-accelerated website generation, automated backups, and professional tools.</p>
+        
+        <form onsubmit="alert('Demo: Account created! Redirecting to dashboard...'); return false;">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Create a strong password (min 8 characters)" minlength="8" required>
+                <span class="password-toggle" onclick="togglePassword('password')">👁️</span>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password</label>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Re-enter your password" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="username">Choose Username</label>
+                <input type="text" id="username" name="username" placeholder="john_doe (3-30 characters)" pattern="[a-zA-Z0-9_]+" maxlength="30" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="company">Company/Organization Name</label>
+                <input type="text" id="company" name="company" placeholder="Your business or personal brand" required>
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="terms" name="terms" checked required>
+                <label for="terms">I agree to the <a href="#" style="color: #667eea;">Terms of Service</a> and <a href="#" style="color: #667eea;">Privacy Policy</a>.</label>
+            </div>
+            
+            <button type="submit" class="btn">Create Account →</button>
+        </form>
+
+        <div class="links-container">
+            <a href="#login-page">Already have an account? Sign In</a>
+            <a href="#forgot-password">Forgot Password?</a>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-box">
+                <h4>🤖 AI Website Builder</h4>
+                <p>Generate professional websites in seconds with our GPU-powered AI tools.</p>
+            </div>
+            <div class="feature-box">
+                <h4>📁 File Storage</h4>
+                <p>Secure cloud storage on AWS S3 with automated daily backups to 2 regions.</p>
+            </div>
+            <div class="feature-box">
+                <h4>🌍 Custom Domains</h4>
+                <p>Connect your own domain names and share them with customers worldwide.</p>
+            </div>
+        </div>
+
+        <footer>
+            © 2026 Yementi Hosted Services. All rights reserved.<br>
+            Secure signup powered by AWS • SSL encrypted connection • GDPR compliant<br>
+            By creating an account, you accept our terms and conditions.
+        </footer>
+    </div>
+
+    <script>
+        function togglePassword(id) {
+            const passwordField = document.getElementById(id);
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+            } else {
+                passwordField.type = 'password';
+            }
+        }
+
+        // Validate passwords match
+        document.addEventListener('input', function() {
+            const pass1 = document.getElementById('password').value;
+            const pass2 = document.getElementById('confirm_password').value;
+            
+            if (pass2 && pass1 !== pass2) {
+                alert('Passwords do not match!');
+                passwordField.classList.add('error');
+            } else if (!pass2) {
+                passwordField.classList.remove('error');
+            }
+        });
+    </script>
+</body>
+</html>
