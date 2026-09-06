@@ -1,34 +1,29 @@
-<!-- =========================================================
-     YEMENTI - PREMIUM HOSTING & AI SERVICES
-     Customer-Facing Landing Page (Main Website)
-     URL: /index.html or /.well-known/index.html
-     ========================================================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yementi - Premium Web Hosting & AI-Powered Services</title>
+    <title>Yementi - Premium Hosting & AI Services</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body { 
             font-family: 'Segoe UI', system-ui, sans-serif; 
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); 
-            color: #fff; 
+            background: #f0f2f5; /* Facebook-style light gray */ 
+            color: #050505; 
             min-height: 100vh;
         }
 
-        /* Navigation */
+        /* Navigation - Facebook blue */
         nav { 
-            background: rgba(22,33,62,.95); 
+            background: #ffffff; 
             padding: 15px 0; 
             position: sticky; 
             top: 0; 
             z-index: 100; 
-            box-shadow: 0 2px 20px rgba(0,0,0,.3);
+            box-shadow: 0 1px 2px rgba(0,0,0,.1);
         }
-        
+
         nav .container { 
             max-width: 1200px; 
             margin: 0 auto; 
@@ -40,402 +35,146 @@
         .logo { 
             font-size: 28px; 
             font-weight: bold; 
-            color: #667eea;
+            color: #1877f2; /* Facebook Blue */
             text-decoration: none;
         }
 
         .nav-links a {
-            color: #a0aec0;
+            color: #050505;
             text-decoration: none;
             margin-left: 30px;
             font-size: 15px;
             transition: all .3s ease;
+            font-weight: 500;
         }
 
         .nav-links a:hover, 
-        .nav-links a.active { color: #667eea; }
+        .nav-links a.active { color: #1877f2; }
 
         /* Hero Section */
         .hero {
-            padding: 120px 20px 80px;
+            padding: 100px 20px 80px;
             text-align: center;
-            background: radial-gradient(ellipse at top, rgba(102,126,234,.3) 0%, transparent 70%);
+            background: linear-gradient(135deg, rgba(24,119,242,.05) 0%, transparent 70%);
         }
 
         .hero h1 { 
-            font-size: 48px; 
+            font-size: 42px; 
             margin-bottom: 20px; 
             line-height: 1.2;
+            color: #050505;
         }
-        
-        .hero span { color: #667eea; }
+
+        .hero span { color: #1877f2; }
         
         .hero p { 
-            font-size: 20px; 
-            color: #e2e8f0; 
+            font-size: 18px; 
+            color: #636363; /* Facebook gray */ 
             max-width: 700px; 
             margin: 0 auto 40px; 
         }
 
+        /* CTA Button - Facebook style */
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #1877f2;
             color: white;
-            padding: 18px 40px;
-            border-radius: 50px;
+            padding: 14px 36px;
+            border-radius: 8px;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 600;
-            box-shadow: 0 10px 30px rgba(102,126,234,.4);
-            transition: transform .3s ease, box-shadow .3s ease;
+            transition: all .2s ease, box-shadow .2s ease;
+            box-shadow: 0 2px 8px rgba(24,119,242,.3);
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(102,126,234,.6);
+            background: #166fe5;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(24,119,242,.4);
         }
 
         /* Services Section */
         .services {
             padding: 80px 20px;
+            background: white;
             max-width: 1200px;
             margin: 0 auto;
+            border-radius: 8px;
         }
 
-        .section-title {
+        .service-item {
             text-align: center;
-            font-size: 36px;
-            margin-bottom: 60px;
+            padding: 30px;
         }
 
-        .section-title span { color: #667eea; }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background: rgba(255,255,255,.05);
-            border-radius: 20px;
-            padding: 40px 30px;
+        /* Footer - Facebook blue */ 
+        footer { 
+            background: #f0f2f5; 
+            color: #636363;
+            padding: 40px 20px; 
             text-align: center;
-            border: 1px solid rgba(102,126,234,.2);
-            transition: transform .3s ease, box-shadow .3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(102,126,234,.3);
-        }
-
-        .icon { 
-            font-size: 60px; 
-            margin-bottom: 20px; 
-            display: block; 
-        }
-
-        .service-card h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #f7fafc;
-        }
-
-        .service-card p {
-            color: #a0aec0;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        /* Login CTA */
-        .login-cta {
-            background: linear-gradient(135deg, rgba(102,126,234,.1) 0%, rgba(118,75,162,.1) 100%);
-            border-radius: 20px;
-            padding: 60px 40px;
-            text-align: center;
-            margin: 60px 20px;
-            border: 1px solid rgba(102,126,234,.3);
-        }
-
-        .login-cta h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-
-        .login-cta p {
-            color: #cbd5e0;
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 40px;
-        }
-
-        /* Footer */
-        footer {
-            background: rgba(0,0,0,.3);
-            padding: 40px 20px;
-            text-align: center;
-            color: #718096;
-        }
-
-        .footer-links {
-            margin-bottom: 20px;
-        }
-
-        .footer-links a {
-            color: #a0aec0;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 14px;
-        }
-
-        /* Pricing Modal */
-        .modal-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,.8);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-        }
-
-        .pricing-modal {
-            background: #1e293b;
-            border-radius: 24px;
-            padding: 40px;
-            max-width: 500px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-
-        .pricing-modal h3 { color: #667eea; margin-bottom: 20px; font-size: 28px; }
-        
-        .plan { 
-            background: rgba(255,255,255,.05); 
-            border-radius: 16px; 
-            padding: 25px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(102,126,234,.3);
-        }
-
-        .plan h4 { 
-            color: #fff; 
-            font-size: 20px; 
-            margin-bottom: 8px; 
-        }
-        
-        .price { 
-            font-size: 32px; 
-            font-weight: bold; 
-            color: #667eea; 
-            margin: 10px 0; 
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;
-            border: none;
-            color: #64748b;
-            font-size: 30px;
-            cursor: pointer;
-        }
-
-        /* Authenticated Users */
-        .authenticated-message {
-            display: none;
-            padding: 200px;
-            text-align: center;
+            border-top: 1px solid #cfcfcf;
         }
 
     </style>
 </head>
 <body>
-
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <a href="/" class="logo">🚀 Yementi</a>
+            <a href="#" class="logo">💎 Yementi</a>
             <div class="nav-links">
-                <a href="#services">Services</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#about">About</a>
-                <a href="/login.html" class="active">Customer Login 🔐</a>
+                <a href="/" class="active">Home</a>
+                <a href="/signup.html">Get Started</a>
+                <a href="/contact.html">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Premium Hosting &<br><span>AI-Powered Services</span></h1>
-        <p>We provide reliable web hosting, intelligent AI processing, and professional web solutions for businesses of all sizes. Start your free trial today!</p>
-        
-        <a href="#pricing" class="cta-button">View Plans & Pricing →</a>
+        <h1>Welcome to <span>Yementi</span></h1>
+        <p>Premium Hosting & AI-Powered Services for Your Business</p>
+        <a href="/signup.html" class="cta-button">Get Started →</a>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services">
-        <h2 class="section-title">Our <span>Premium Services</span></h2>
-        
-        <div class="services-grid">
-            <!-- Hosting Service Card -->
-            <div class="service-card">
-                <span class="icon">🌐</span>
-                <h3>Web Hosting</h3>
-                <p>Fast, reliable hosting with 99.9% uptime guarantee. SSS optimized storage and automatic SSL certificates included.</p>
-                <a href="#pricing" style="color:#667eea; text-decoration:none; font-weight:600;">See Plans →</a>
+    <section class="services">
+        <div class="container">
+            <h2 style="text-align:center;font-size:32px;margin-bottom:40px;">Our Services</h2>
+            
+            <div class="service-item">
+                <div style="font-size:60px;margin-bottom:15px;">🚀</div>
+                <h3>Fast Hosting</h3>
+                <p style="color:#636363;font-size:14px;margin-top:8px;">Lightning-fast servers with 99.9% uptime</p>
             </div>
 
-            <!-- AI Processing Card -->
-            <div class="service-card">
-                <span class="icon">🤖</span>
-                <h3>AI Model Hosting</h3>
-                <p>Deploy and run cutting-edge AI models with GPU-accelerated processing. Perfect for machine learning workloads.</p>
-                <a href="#pricing" style="color:#667eea; text-decoration:none; font-weight:600;">See Plans →</a>
+            <div class="service-item">
+                <div style="font-size:60px;margin-bottom:15px;">🤖</div>
+                <h3>AI Services</h3>
+                <p style="color:#636363;font-size:14px;margin-top:8px;">Cutting-edge AI solutions for your business</p>
             </div>
 
-            <!-- Database Card -->
-            <div class="service-card">
-                <span class="icon">🗄️</span>
-                <h3>Database Services</h3>
-                <p>Managed PostgreSQL, MySQL, and MongoDB instances with automatic backups and scaling options.</p>
-                <a href="#pricing" style="color:#667eea; text-decoration:none; font-weight:600;">See Plans →</a>
+            <div class="service-item">
+                <div style="font-size:60px;margin-bottom:15px;">🔒</div>
+                <h3>Secure & Reliable</h3>
+                <p style="color:#636363;font-size:14px;margin-top:8px;">Enterprise-grade security and monitoring</p>
             </div>
 
-            <!-- Managed Services Card -->
-            <div class="service-card">
-                <span class="icon">🛠️</span>
-                <h3>Managed Solutions</h3>
-                <p>24/7 monitoring, security updates, and performance optimization. We handle the technical details.</p>
-                <a href="#pricing" style="color:#667eea; text-decoration:none; font-weight:600;">See Plans →</a>
+            <div class="service-item">
+                <div style="font-size:60px;margin-bottom:15px;">☁️</div>
+                <h3>Cloud Solutions</h3>
+                <p style="color:#636363;font-size:14px;margin-top:8px;">Scalable infrastructure for growing businesses</p>
             </div>
-
-            <!-- CDN Card -->
-            <div class="service-card">
-                <span class="icon">⚡</span>
-                <h3>CDN & Global Reach</h3>
-                <p>Content delivery network with worldwide edge caching for lightning-fast global content delivery.</p>
-                <a href="#pricing" style="color:#667eea; text-decoration:none; font-weight:600;">See Plans →</a>
-            </div>
-
-            <!-- Support Card -->
-            <div class="service-card">
-                <span class="icon">🎧</span>
-                <h3>Premium Support</h3>
-                <p>Dedicated account managers and priority support for enterprise clients. Get results faster.</p>
-                <a href="#pricing" style="color:#667eea; text-decoration:none; font-weight:600;">See Plans →</a>
-            </div>
-        </div>
-
-        <!-- Login CTA Section -->
-        <div class="login-cta">
-            <h2>Already a Yementi Customer?</h2>
-            <p>Access your account dashboard, manage services, and support tickets from our secure customer portal.</p>
-            <a href="/login.html" class="cta-button">Login to Dashboard →</a>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="about">
-        <div class="container">
-            <h3>🚀 Yementi Hosting & Services</h3>
-            <p style="margin: 20px 0;">Premium cloud hosting and AI solutions since 2026</p>
-            
-            <div class="footer-links">
-                <a href="/contact.html">Support</a>
-                <a href="/login.html">Login</a>
-                <a href="https://github.com/yementi" target="_blank">GitHub</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-            </div>
-            
-            <p style="font-size: 13px; margin-top: 20px;">© 2026 Yementi Hosting. All rights reserved.</p>
-        </div>
+    <!-- Footer with Yementi.io copyright -->
+    <footer>
+        <p style="font-size:13px;margin-bottom:8px;">&copy; 2026 Yementi.io - All rights reserved.</p>
+        <p style="font-size:12px;color:#8E8E93;">AI-powered web hosting • GPU-accelerated services • AWS infrastructure</p>
     </footer>
 
-    <!-- Pricing Modal (hidden by default) -->
-    <div class="modal-overlay" id="pricingModal">
-        <button class="close-modal" onclick="toggleModal('pricingModal')">×</button>
-        <div class="pricing-modal">
-            <h3>🌟 Choose Your Plan</h3>
-            
-            <!-- Free Tier -->
-            <div class="plan">
-                <h4>Starter</h4>
-                <div class="price">$0/month</div>
-                <p style="color:#64748b; margin-bottom:15px;">Perfect for getting started. No credit card required.</p>
-                <ul style="color:#cbd5e0; text-align:left; line-height:2;">
-                    <li>✓ 1 Website</li>
-                    <li>✓ 1GB SSD Storage</li>
-                    <li>✓ 100GB/month Bandwidth</li>
-                    <li>✓ Basic AI Integration</li>
-                </ul>
-            </div>
-
-            <!-- Professional -->
-            <div class="plan">
-                <h4>Professional</h4>
-                <div class="price">$29/month</div>
-                <p style="color:#64748b; margin-bottom:15px;">For growing businesses and developers.</p>
-                <ul style="color:#cbd5e0; text-align:left; line-height:2;">
-                    <li>✓ 5 Websites</li>
-                    <li>✓ 5GB SSD Storage</li>
-                    <li>✓ 500GB/month Bandwidth</li>
-                    <li>✓ Enhanced AI APIs</li>
-                    <li>✓ Priority Support</li>
-                </ul>
-            </div>
-
-            <!-- Business -->
-            <div class="plan">
-                <h4>Business</h4>
-                <div class="price">$99/month</div>
-                <p style="color:#64748b; margin-bottom:15px;">For enterprises and high-traffic sites.</p>
-                <ul style="color:#cbd5e0; text-align:left; line-height:2;">
-                    <li>✓ Unlimited Websites</li>
-                    <li>✓ 50GB SSD Storage</li>
-                    <li>✓ Unlimited Bandwidth</li>
-                    <li>✓ Full AI Model Deployment</li>
-                    <li>✓ Dedicated Support Manager</li>
-                </ul>
-            </div>
-
-            <!-- Enterprise -->
-            <div class="plan">
-                <h4 style="color:#667eea;">Enterprise (Custom)</h4>
-                <p style="color:#cbd5e0; margin-bottom:15px;">Tailored solutions for large-scale operations.</p>
-                <a href="/contact.html" style="background:linear-gradient(135deg, #667eea 0%, #764ba2 100%); color:white; padding:10px 20px; border-radius:25px; text-decoration:none; display:inline-block;">Contact Sales →</a>
-            </div>
-
-            <button onclick="openModal('pricingModal')" style="background:transparent; border:2px solid #667eea; color:#667eea; padding:12px 30px; border-radius:30px; cursor:pointer; width:100%; margin-top:20px;">Show This Modal</button>
-        </div>
-    </div>
-
-    <script>
-        // Show/hide modal for demo purposes
-        function toggleModal(modal) { document.getElementById(modal).style.display = 'none'; }
-        function openModal(id) { 
-            const modal = document.getElementById(id);
-            modal.style.display = 'flex';
-            if (id === 'pricingModal') window.scrollTo({ top: 0, behavior: 'smooth' }); 
-        }
-
-        // Smooth scroll to login for authenticated users
-        if (window.location.pathname.includes('/login')) {
-            document.querySelectorAll('.nav-links a[href="/login.html"]').forEach(a => a.classList.add('active'));
-        }
-
-        // Hero CTA scroll
-        document.querySelector('.hero .cta-button').addEventListener('click', e => {
-            e.preventDefault(); 
-            toggleModal('pricingModal');
-        });
-
-        // Auto-hide modal after 3 seconds for demo
-        setTimeout(() => {}, 3000);
-    </script>
 </body>
 </html>
