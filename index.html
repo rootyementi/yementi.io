@@ -1,180 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yementi - Premium Hosting & AI Services</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body { 
-            font-family: 'Segoe UI', system-ui, sans-serif; 
-            background: #f0f2f5; /* Facebook-style light gray */ 
-            color: #050505; 
-            min-height: 100vh;
-        }
-
-        /* Navigation - Facebook blue */
-        nav { 
-            background: #ffffff; 
-            padding: 15px 0; 
-            position: sticky; 
-            top: 0; 
-            z-index: 100; 
-            box-shadow: 0 1px 2px rgba(0,0,0,.1);
-        }
-
-        nav .container { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-        }
-
-        .logo { 
-            font-size: 28px; 
-            font-weight: bold; 
-            color: #1877f2; /* Facebook Blue */
-            text-decoration: none;
-        }
-
-        .nav-links a {
-            color: #050505;
-            text-decoration: none;
-            margin-left: 30px;
-            font-size: 15px;
-            transition: all .3s ease;
-            font-weight: 500;
-        }
-
-        .nav-links a:hover, 
-        .nav-links a.active { color: #1877f2; }
-
-        /* Hero Section */
-        .hero {
-            padding: 100px 20px 80px;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(24,119,242,.05) 0%, transparent 70%);
-        }
-
-        .hero h1 { 
-            font-size: 42px; 
-            margin-bottom: 20px; 
-            line-height: 1.2;
-            color: #050505;
-        }
-
-        .hero span { color: #1877f2; }
-        
-        .hero p { 
-            font-size: 18px; 
-            color: #636363; /* Facebook gray */ 
-            max-width: 700px; 
-            margin: 0 auto 40px; 
-        }
-
-        /* CTA Button - Facebook style */
-        .cta-button {
-            display: inline-block;
-            background: #1877f2;
-            color: white;
-            padding: 14px 36px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 600;
-            transition: all .2s ease, box-shadow .2s ease;
-            box-shadow: 0 2px 8px rgba(24,119,242,.3);
-        }
-
-        .cta-button:hover {
-            background: #166fe5;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(24,119,242,.4);
-        }
-
-        /* Services Section */
-        .services {
-            padding: 80px 20px;
-            background: white;
-            max-width: 1200px;
-            margin: 0 auto;
-            border-radius: 8px;
-        }
-
-        .service-item {
-            text-align: center;
-            padding: 30px;
-        }
-
-        /* Footer - Facebook blue */ 
-        footer { 
-            background: #f0f2f5; 
-            color: #636363;
-            padding: 40px 20px; 
-            text-align: center;
-            border-top: 1px solid #cfcfcf;
-        }
-
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yementi - Future Web Solutions</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;overflow-x:hidden;background:#0a0a0f;color:white;line-height:1.6}
+.scroll-reveal{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.5,0,.7,1)}
+.scroll-reveal.active{opacity:1;transform:translateY(0)}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(rgba(255,255,255,.1),transparent)}
+.hero h1{font-size:clamp(48px,8vw,96px);font-weight:800;margin-bottom:24px;letter-spacing:-.02em;text-shadow:0 4px 30px rgba(99,102,241,.5)}
+.hero h1 span{background:linear-gradient(90deg,#a78bfa,#6366f1,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:#0a0a0f;text-shadow:none}
+.hero p{font-size:clamp(18px,4vw,28px);max-width:800px;margin-bottom:36px;color:#c7d2fe;animation:none}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:18px 42px;background:linear-gradient(90deg,#6366f1,#8b5cf6);color:white;font-size:18px;font-weight:700;border-radius:50px;text-decoration:none;transition:all .3s ease;margin-bottom:30px}
+.btn:hover{transform:scale(1.05);box-shadow:0 20px 40px rgba(99,102,241,.5);background:linear-gradient(90deg,#8b5cf6,#a78bfa)}
+.features{padding:120px 20px;background:#0a0a0f}
+.section-title{font-size:36px;font-weight:700;margin-bottom:60px;text-align:center;color:white}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;max-width:1200px;margin:0 auto}
+.feature-card{background:linear-gradient(135deg,rgba(99,102,241,.1),transparent);border:1px solid rgba(99,102,241,.2);border-radius:24px;padding:40px;transition:all .4s ease}
+.feature-card:hover{transform:translateY(-8px);box-shadow:0 20px 60px rgba(99,102,241,.3);background:linear-gradient(135deg,rgba(99,102,241,.2),rgba(139,92,246,.1))}
+.feature-card h3{font-size:24px;margin-bottom:16px;color:#a78bda}
+.feature-card p{color:#c7d2fe;font-size:15px;line-height:1.7}
+footer{padding:40px 20px;background:#0a0a0f;text-align:center;border-top:1px solid rgba(255,255,255,.1)}
+footer p{font-size:14px;color:#6b7280;margin-bottom:8px}
+</style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <a href="#" class="logo">💎 Yementi</a>
-            <div class="nav-links">
-                <a href="/" class="active">Home</a>
-                <a href="/signup.html">Get Started</a>
-                <a href="/contact.html">Contact</a>
-            </div>
-        </div>
-    </nav>
+<section class="hero">
+<h1 class="scroll-reveal"><span>Welcome to</span><br>Yementi.io</h1>
+<p class="scroll-reveal" style="animation-delay:.2s;">Premium static hosting • AI-powered solutions • Modern web experiences</p>
+<a href="#get-started" class="btn scroll-reveal" style="animation-delay:.4s;">Get Started Now →</a>
+</section>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Welcome to <span>Yementi</span></h1>
-        <p>Premium Hosting & AI-Powered Services for Your Business</p>
-        <a href="/signup.html" class="cta-button">Get Started →</a>
-    </section>
+<section class="features">
+<h2 class="section-title scroll-reveal">Why Choose Yementi?</h2>
+<div class="feature-grid">
+<article class="feature-card scroll-reveal" style="animation-delay:.6s;">
+<h3>⚡ Lightning Fast</h3>
+<p>Deploy instantly on global edge network. Your content loads in milliseconds, not seconds.</p>
+</article>
+<article class="feature-card scroll-reveal" style="animation-delay:.7s;">
+<h3>🎨 Modern Design</h3>
+<p>Futuristic aesthetics with scroll-triggered animations that wow your visitors every time.</p>
+</article>
+<article class="feature-card scroll-reveal" style="animation-delay:.8s;">
+<h3>🤖 AI-Powered</h3>
+<p>Smart optimizations, automated builds, and intelligent scaling for your growing needs.</p>
+</article>
+</div>
+</section>
 
-    <!-- Services Section -->
-    <section class="services">
-        <div class="container">
-            <h2 style="text-align:center;font-size:32px;margin-bottom:40px;">Our Services</h2>
-            
-            <div class="service-item">
-                <div style="font-size:60px;margin-bottom:15px;">🚀</div>
-                <h3>Fast Hosting</h3>
-                <p style="color:#636363;font-size:14px;margin-top:8px;">Lightning-fast servers with 99.9% uptime</p>
-            </div>
+<footer>
+<p>&copy; 2026 Yementi.io - All rights reserved. AI-powered web hosting • GPU-accelerated services • AWS infrastructure</p>
+</footer>
 
-            <div class="service-item">
-                <div style="font-size:60px;margin-bottom:15px;">🤖</div>
-                <h3>AI Services</h3>
-                <p style="color:#636363;font-size:14px;margin-top:8px;">Cutting-edge AI solutions for your business</p>
-            </div>
-
-            <div class="service-item">
-                <div style="font-size:60px;margin-bottom:15px;">🔒</div>
-                <h3>Secure & Reliable</h3>
-                <p style="color:#636363;font-size:14px;margin-top:8px;">Enterprise-grade security and monitoring</p>
-            </div>
-
-            <div class="service-item">
-                <div style="font-size:60px;margin-bottom:15px;">☁️</div>
-                <h3>Cloud Solutions</h3>
-                <p style="color:#636363;font-size:14px;margin-top:8px;">Scalable infrastructure for growing businesses</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer with Yementi.io copyright -->
-    <footer>
-        <p style="font-size:13px;margin-bottom:8px;">&copy; 2026 Yementi.io - All rights reserved.</p>
-        <p style="font-size:12px;color:#8E8E93;">AI-powered web hosting • GPU-accelerated services • AWS infrastructure</p>
-    </footer>
-
+<script>
+document.querySelectorAll('.scroll-reveal').forEach(el=>{const io=IntersectionObserver({threshold:.15,rootMargin:'100px'}});io.observe(el,{target:()=>el.classList.add('active')})}
+</script>
 </body>
 </html>
