@@ -1,63 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yementi - Future Web Solutions [v2.0-live-2026-09-11]</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',system-ui,sans-serif;overflow-x:hidden;background:#0a0a0f;color:white;line-height:1.6}
-.scroll-reveal{opacity:0;transform:translateY(40px);transition:all .8s cubic-bezier(.5,0,.7,1)}
-.scroll-reveal.active{opacity:1;transform:translateY(0)}
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(rgba(255,255,255,.1),transparent)}
-.hero h1{font-size:clamp(48px,8vw,96px);font-weight:800;margin-bottom:24px;letter-spacing:-.02em;text-shadow:0 4px 30px rgba(99,102,241,.5)}
-.hero h1 span{background:linear-gradient(90deg,#a78bfa,#6366f1,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:#0a0a0f;text-shadow:none}
-.hero p{font-size:clamp(18px,4vw,28px);max-width:800px;margin-bottom:36px;color:#c7d2fe;animation:none}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:18px 42px;background:linear-gradient(90deg,#6366f1,#8b5cf6);color:white;font-size:18px;font-weight:700;border-radius:50px;text-decoration:none;transition:all .3s ease;margin-bottom:30px}
-.btn:hover{transform:scale(1.05);box-shadow:0 20px 40px rgba(99,102,241,.5);background:linear-gradient(90deg,#8b5cf6,#a78bfa)}
-.features{padding:120px 20px;background:#0a0a0f}
-.section-title{font-size:36px;font-weight:700;margin-bottom:60px;text-align:center;color:white}
-.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;max-width:1200px;margin:0 auto}
-.feature-card{background:linear-gradient(135deg,rgba(99,102,241,.1),transparent);border:1px solid rgba(99,102,241,.2);border-radius:24px;padding:40px;transition:all .4s ease}
-.feature-card:hover{transform:translateY(-8px);box-shadow:0 20px 60px rgba(99,102,241,.3);background:linear-gradient(135deg,rgba(99,102,241,.2),rgba(139,92,246,.1))}
-.feature-card h3{font-size:24px;margin-bottom:16px;color:#a78bda}
-.feature-card p{color:#c7d2fe;font-size:15px;line-height:1.7}
-footer{padding:40px 20px;background:#0a0a0f;text-align:center;border-top:1px solid rgba(255,255,255,.1)}
-footer p{font-size:14px;color:#6b7280;margin-bottom:8px}
-</style>
-</head>
-<body>
-<section class="hero">
-<h1 class="scroll-reveal"><span>Welcome to</span><br>Yementi.io</h1>
-<p class="scroll-reveal" style="animation-delay:.2s;">Premium static hosting • AI-powered solutions • Modern web experiences</p>
-<a href="#get-started" class="btn scroll-reveal" style="animation-delay:.4s;">Get Started Now →</a>
-</section>
-
-<section class="features">
-<h2 class="section-title scroll-reveal">Why Choose Yementi?</h2>
-<div class="feature-grid">
-<article class="feature-card scroll-reveal" style="animation-delay:.6s;">
-<h3>⚡ Lightning Fast</h3>
-<p>Deploy instantly on global edge network. Your content loads in milliseconds, not seconds.</p>
-</article>
-<article class="feature-card scroll-reveal" style="animation-delay:.7s;">
-<h3>🎨 Modern Design</h3>
-<p>Futuristic aesthetics with scroll-triggered animations that wow your visitors every time.</p>
-</article>
-<article class="feature-card scroll-reveal" style="animation-delay:.8s;">
-<h3>🤖 AI-Powered</h3>
-<p>Smart optimizations, automated builds, and intelligent scaling for your growing needs.</p>
-</article>
-</div>
-</section>
-
-<footer>
-<p>&copy; 2026 Yementi.io - All rights reserved. AI-powered web hosting • GPU-accelerated services • AWS infrastructure</p>
-</footer>
-
-<script>
-document.querySelectorAll('.scroll-reveal').forEach(el=>{const io=IntersectionObserver({threshold:.15,rootMargin:'100px'}});io.observe(el,{target:()=>el.classList.add('active')})}
-</script>
-</body>
-</html>
+<html lang="en" data-theme="dark">
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Yementi.io - Futuristic Web Solutions</title>
+<style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,sans-serif;overflow-x:hidden}
+.hero{min-height:90vh;display:flex;flex-direction:column;justify-content:center;padding:3rem;background:linear-gradient(135deg,#0a0a0f 0%,#0f0f16 50%,#1a1a2e 100%);color:#fff}
+.hero h1{font-size:clamp(3rem,8vw,5rem);line-height:0.9;margin-bottom:2rem;text-align:center;opacity:0;transform:translateY(30px)}
+.hero span{display:inline-block;background:linear-gradient(90deg,#6366f1 0%,#a855f7 40%,#ec4899 100%);-webkit-background-clip:text;-webkit-text-fill-color:#fff;filter:drop-shadow(0 0 20px rgba(99,102,241,.5))}
+.hero p{font-size:clamp(1.1rem,3vw,1.6rem);max-width:600px;text-align:center;margin-bottom:2rem;opacity:0;transform:translateY(20px)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;padding:3rem 2rem;max-width:1200px;margin:-4rem auto 8rem;background:radial-gradient(circle,#1e1e2f 0%,transparent 70%)}
+.card{background:rgba(255,255,255,0.03);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:2rem;text-align:center;transform:translateY(20px);opacity:0;transition:all .4s cubic-bezier(.17,.67,.83,.67)}
+.card:hover{transform:translateY(-8px) scale(1.02);border-color:rgba(99,102,241,.5);box-shadow:0 20px 40px rgba(99,102,241,.15)}
+.card h3{font-size:1.4rem;margin-bottom:.7rem;background:linear-gradient(90deg,#fff,#ccc);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.footer{text-align:center;padding:3rem;color:#888;font-size:.9rem;opacity:0;transform:translateY(20px)}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}.fade-in{animation:fadeUp .8s cubic-bezier(.17,.67,.83,.67) forwards}.slide-right{animation-delay:.15s}.slide-left{animation-delay:.3s}
+</style></head>
+<body><div class="hero">
+<h1 class="fade-in slide-right" aria-label="Welcome headline"><span>Welcome to</span> Yementi.io</h1>
+<p>Building the web of tomorrow. Modern, responsive, and performance-obsessed websites that scale with your vision.</p>
+<div style="margin-top:2rem;display:flex;justify-content:center">
+<a href="#services" style="background:#6366f1;color:#fff;padding:.8rem 2rem;border-radius:50px;text-decoration:none;font-weight:600;font-size:1.1rem;display:inline-flex;align-items:center;gap:.5rem;transition:all .3s;border:none">Explore Our Services
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2"/></svg></a>
+</div></div><div class="cards" id="services">
+<div class="card fade-in slide-right">
+<h3>Web Development</h3>Custom websites built with modern technologies that deliver speed, security, and scalability.</div>
+<div class="card fade-in slide-left">
+<h3>Brand Design</h3>Premium visual identity systems crafted for tech-forward companies ready to lead markets.</div>
+<div class="card fade-in slide-right">
+<h3>Future Strategy</h3>Innovation consulting that positions your brand at the cutting edge of web evolution.</div></div><footer class="footer"><p>&copy; 2026-<script>new Date().getFullYear()</script> Yementi.io. All rights reserved. | <a href="#contact" style="color:#888;text-decoration:underline">Get in touch</a></p></footer><script>// Stagger scroll animations
+document.querySelectorAll('.card').forEach((card, index) => {setTimeout(() => card.classList.add('fade-in'), 200 + Math.random() * 300)});
+console.log('Yementi.io loading: futuristic homepage ready');</script></body></html>
