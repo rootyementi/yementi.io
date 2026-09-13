@@ -3,379 +3,80 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<<<<<<< HEAD
-<title>Yementi.io — Build Digital Experiences</title>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>YEMENTI.io — Premium Static Business Websites</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#050510;--text:#e8e9f0;--accent:#6366f1;--accent-2:#ec4899;--nav-bg:rgba(5,5,16,0.7);--card-bg:rgba(255,255,255,0.02)}
+:root{--bg:#020208;--text:#eaecef;--surface:#0d0f1a;--surface-2:#0a0c14;--accent:#ff6b35;--accent-2:#f7931a;--muted:#7da0b8;--primary:#5865f2;--success:#22c55e}
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{height:100%;overflow-x:hidden;font-family:'Rajdhani',sans-serif;background:black;color:var(--text);cursor:default}
-body>nav.navbar{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;padding:24px 6%;background:var(--nav-bg);backdrop-filter:blur(30px);z-index:1000;border-bottom:1px solid rgba(255,255,255,0.08)}
-body>nav .nav-flex{display:flex;align-items:center;gap:clamp(16px,4vw,32px)}
-body>nav .logo{font-family:'Inter',sans-serif;font-size:1.6rem;font-weight:700;color:#fff;text-decoration:none;text-transform:uppercase;letter-spacing:2px}
-body>nav .nav-links{display:flex;gap:clamp(8px,3vw,24px);flex-wrap:wrap}
-body>nav .nav-link{text-decoration:none;color:hsla(217,90%,95%,.85);font-size:.9rem;font-weight:400;padding-bottom:6px;border-bottom:2px solid transparent;transition:border-color .2s ease,text-shadow .3s ease}
-body>nav .nav-link:hover,body>nav .nav-link[data-target="hero"]{color:#fff;border-color:var(--accent)}
-body main[tabindex="-1"].main-content{min-height:calc(100vh - 80px);cursor:auto;overflow:hidden}
-.body-scroll-enabled.main-content{cursor:default;background:linear-gradient(185deg,#02020a.6,transparent),radial-gradient(at 30% 20%,rgba(100,100,255,.04),transparent 40%),radial-gradient(at 85% 70%,rgba(236,72,153,.04),transparent 40%)
-}
-body.main-content main.hero-section{min-height:calc(100vh - 80px);display:flex;flex-direction:column;align-items:center;padding-top:280px;padding-bottom:clamp(20%,120px)}
-body.main-content main.hero-section h1.hero-title{text-align:center;font-size:clamp(3rem,9vw,9rem);line-height:.9;margin-bottom:24px;letter-spacing:-2px;text-shadow:0 4px 60px rgba(99,102,241,.4)}
-body.main-content main.hero-section p.hero-subtitle{font-size:clamp(.85rem,2.5vw,1.1rem);opacity:.7;margin-bottom:80px;text-align:center;max-width:600px}
-body.main-content main.hero-background{position:absolute;inset:0;-webkit-mask:linear-gradient(bottom,#1a192e 50%,transparent),conic-gradient(from 90deg#6366f1 0 6turn,transparent,var(--text));mask:var(--mask)}
-body.main-content main.hero-background .hero-orb{position:absolute;background:radial-gradient(circle at 40% 50%,rgba(99,102,241,.3),transparent);border-radius:50%;filter:blur(60px);animation:orbFloat 20s ease-in-out infinite alternate}
-@media(max-width:890px){.body-scroll-enabled.main-content{cursor:auto}}
-
-/* Section transitions */
-transition-all-section{min-height:calc(100vh - 0px);padding:clamp(10%,40px);padding-top:5%;display:flex;flex-direction:column;align-items:center}
-section.transition-into-new-content{background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.0));border-top:1px solid rgba(99,102,241,.1)}
-@media(max-width:890px){section.transition-into-new-content{padding:clamp(8%,30px)}}
-
-/* Business demo selector */
-body.section-imagine-your-business.main-content main.business-selector{display:flex;flex-direction:column;align-items:center;margin-top:-2%;margin-bottom:6%;gap:clamp(12px,3vw,24px)}
-body.section-imagine-your-business.main-content main.business-selector h2{font-size:clamp(1.8rem,5vw,3.5rem);text-align:center;margin-bottom:clamp(20px,5vw,40px);text-shadow:var(--shadow)}
-body.section-imagine-your-business.main-content main.business-selector .business-cards{display:flex;gap:clamp(16px,4vw,32px);flex-wrap:wrap;padding:clamp(0,-4vw,-24px) 5% 3vw 5%;align-items:flex-start;justify-content:center}
-body.section-imagine-your-business.main-content main.business-selector .business-card{display:flex;flex-direction:column;width:minmax(160px,300px);max-width:300px;background:var(--card-bg);border-radius:24px;padding:clamp(18px,5vw,32px);cursor:pointer;border:1px solid rgba(99,102,241,.08);gap:12px;transition:background .3s cubic-bezier(.25,.8,.25,1),border-color .3s ease,transform .3s cubic-bezier(.25,.8,.25,1)}
-body.section-imagine-your-business.main-content main.business-selector .business-card:is(:hover,:focus-within){background:rgba(99,102,241,.1);border-color:var(--accent)}
-body.section-imagine-your-business.main-content main.business-selector .business-card h3{font-size:clamp(.85rem,2.5vw,.9rem);color:#fff;font-weight:500}
-body.section-imagine-your-business.main-content main.business-toggle-active .business-card.is-active{background:linear-gradient(185deg,#6366f1.2,rgba(255,255,255,.04));border-color:var(--accent)}
-
-/* Site demo showcase */
-body.showcase-interactive-site-elements.main-content main.site-showcase{padding-top:8%;display:flex;flex-direction:column;align-items:center}
-body.showcase-interactive-site-elements.main-content main.site-showcase h2{font-size:clamp(1.8rem,5vw,3.8rem);text-align:center;margin-bottom:40px;text-shadow:var(--shadow)}
-body.showcase-interactive-site-elements.main-content main.site-showcase .demo-booker-widget{display:flex;flex-direction:column;width:minmax(160px,720px);margin-bottom:clamp(48px,-4vw,72px);gap:clamp(12px,3.5vw,28px)}
-body.showcase-interactive-site-elements.main-content main.site-showcase .demo-booker-widget h3{font-size:clamp(1.1rem,3vw,1.4rem);text-align:center;font-weight:600;letter-spacing:.05em}
-body.showcase-interactive-site-elements.main-content main.site-showcase .demo-booker-interface{display:flex;flex-direction:column;border-radius:28px;border:1px solid rgba(99,102,241,.1);background:#0f0f23;padding:clamp(28px,6vw,56px);gap:clamp(18px,5vw,40px)}
-body.showcase-interactive-site-elements.main-content main.site-showcase .demo-booker-interface h4{font-size:clamp(1rem,2.5vw,1.1rem);opacity:.7;margin-bottom:calc(min(3.5vw,16px),8px)}
-body.showcase-interactive-site-elements.main-content main.site-showcase .demo-booker-interface p{font-size:clamp(.9rem,2.4vw,.95rem);opacity:.7}
-@keyframes shake{0%,100%{transform:translateX(0);} 25%{transform:translateX(-3px);} 75%{transform:translateX(3px)}}
-
-/* Services overview */
-body.main-content main.services-overview{padding:calc(min(8vw,64px),clamp(10%,60px)) calc(3.5vw,32px);color:#fff;display:flex;flex-direction:column;gap:min(.9rem,var(--gap-size,.9rem));text-align:center}
-body.main-content main.services-overview .services-grid{display:flex;justify-content:center;padding:clamp(18px,4.5vw,24px) 0;gap:clamp(var(--gap-size),28px)}
-body.main-content main.services-overview .service-row-col h3{font-size:clamp(1.4rem,3.6vw,2.5rem);margin-bottom:min(.7rem,var(--gap-size))}
-body.main-content main.services-overview .service-row-col p{font-size:clamp(.9rem,2.3vw,.95rem);opacity:.8;color:#c8cad0;line-height:1.5}
-
-/* Contact section */
-body.section-cta-section.main-content footer.contact-cta-footer h2.cta-headline{font-size:clamp(2rem,6vw,4rem);margin-bottom:min(.65rem,var(--gap-size));text-align:center;text-shadow:var(--shadow)}
-body.section-cta-section.main-content footer.contact-cta-footer p.cta-subhead{font-size:clamp(.85rem,2.2vw,.9rem);max-width:340px;opacity:.7;margin-bottom:min(max(5vh,65px),calc(min(var(--gap-size),80px) + 1em));text-align:center}
-body.section-cta-section.main-content footer.contact-cta-footer .contact-methods{display:flex;align-items:center;border-top:1px solid rgba(99,102,241,.1);padding:clamp(var(--gap-size),38px) 0;justify-content:center;font-size:.85rem;opacity:.7}
-body.scroll-enabled main.transition-to-services{display:none}
-
-/* Animations */
-@keyframes orbFloat{0%{transform:translateY(20vh);} 50%{transform:translateY(-40vh);} 100%{transform:translateY(20vh);}}
-</style>
-<body class="main-content">
-
-<!-- Navigation -->
-<nav class="navbar" aria-label="Main navigation">
-<div class="nav-flex">
-<a href="#" class="logo" tabindex="-1">YEMENTI</a>
-<div class="nav-links">
-<a href="#hero" class="nav-link" data-target="hero" aria-label="Home">WORK</a>
-<a href="#services" class="nav-link" data-target="services" aria-label="Services">SERVICES</a>
-<a href="#demo-sites" class="nav-link" data-target="demo-sites" aria-label="Demo sites">DEMO SITES</a>
-<a href="#contact" class="nav-link" data-target="contact" aria-label="Contact us">CONTACT</a>
-</div>
-<!-- Hidden portal access -->
-<div style="display:none" id="legacy-portal-access"></div>
-</div>
-</nav>
-
-<main tabindex="-1">
-
-<!-- Opening Hero Experience -->
-<section class="hero-section" id="hero" aria-label="Homepage introduction — Yementi, the digital system coming online" role="banner">
-<div class="hero-background">
-<div class="hero-orb orb-1" style="top:5%;left:-10%;width:85vh;height:85vh;animation-delay:.2s"></div>
-<div class="hero-orb orb-2" style="bottom:-10%;right:-10%;width:95vh;height:95vh;animation-delay:-.75s;background:radial-gradient(circle,rgba(99,102,241,.3),transparent)"></div>
-</div>
-<h1 class="hero-title">WE BUILD DIGITAL<br><span style="color:#a855f7;text-shadow:var(--shadow)">EXPERIENCES</span></h1>
-<p class="hero-subtitle" hidden>No more websites — craft something entirely different.</p>
-</section>
-
-<!-- The transformation zone → scroll triggers reveal -->
-<main tabindex="-1" id="scroll-triggered-content" class="body-scroll-enabled">
-
-<section class="transition-all-section transition-to-services">
-<h2 style="font-size:clamp(2.5rem,7vw,5rem);text-align:center;margin-bottom:min(.6em,var(--gap-size))">YOUR BUSINESS<br><span style="color:#a855f7;text-shadow:var(--shadow)">TRANSFORMS HERE</span></h2>
-<p style="font-size:clamp(1rem,3vw,1.1rem);max-width:420px;opacity:.7;margin-top:min(.6em,var(--gap-size))">Choose a fictional business type — watch what it could become.</p>
-</section>
-
-<section class="transition-all-section section-imagine-your-business">
-<main tabindex="-1" aria-label="Experience the future of your business online">
-<h2>IMAGINE YOUR BUSINESS<br><span style="color:#a855f7;text-shadow:var(--shadow)">HERE — TODAY</span></h2>
-<div class="business-cards">
-<button class="business-card is-active business-1" aria-pressed="true" tabindex="-1">
-<h3>CRAFT &amp; CUTS — Barber Shop</h3>
-</button>
-<button class="business-card business-2" aria-pressed="false" tabindex="-1">
-<h3>CHIC BLOWS — Salon</h3>
-</button>
-<button class="business-card business-3" aria-pressed="false" tabindex="-1">
-<h3>SILKS &amp; STEAK — Restaurant</h3>
-</button>
-<button class="business-card business-4" aria-pressed="false" tabindex="-1">
-<h3>BLESSED HAVEN — Church</h3>
-</button>
-<button class="business-card business-5" aria-pressed="false" tabindex="-1">
-<h3>MERCATOR CONTRACTING — Home Builder</h3>
-</button>
-<button class="business-card business-6" aria-pressed="false" tabindex="-1">
-<h3>FAMILY PET GROOMERS — Dog Spa</h3>
-</button>
-</div>
-</main>
-</section>
-
-<!-- Services Overview -->
-<section class="transition-all-section services-overview" id="services" aria-label="Services" role="region">
-<main tabindex="-1"><h2>CRAFTING THE DIGITAL FUTURE<br><span style="color:#a855f7;text-shadow:var(--shadow)">FOR YOUR BUSINESS</span></h2>
-<p style="font-size:clamp(1rem,3vw,1.05rem);margin-top:min(.6em,var(--gap-size));opacity:.7">We don't build websites — we craft digital experiences<br>that bring your business to life.</p>
-
-<div class="services-grid">
-<article class="service-row-col" aria-label="Custom Web Design">
-<h3>CUSTOM WEB DESIGN</h3>
-<p>Websites crafted for impact that showcase what a premium brand can achieve. No templates — only unique experiences built from the ground up.</p>
-</article>
-
-<article class="service-row-col" aria-label="Digital Strategy Consulting">
-<h3>DIGITAL STRATEGY</h3>
-<p>Data-driven decisions and conversion-focused design principles to amplify impact and maximize customer engagement.</p>
-</article>
-
-<article class="service-row-col" aria-label="E-commerce Solutions">
-<h3>E-COMMERCE BUILD</h3>
-<p>Fully responsive commerce experiences with payment integrations, inventory tracking, and order management.</p>
-</article>
-
-<article class="service-row-col" aria-label="Development & Maintenance">
-<h3>DEVELOPMENT + MAINTENANCE</h3>
-<p>We handle the technical — from hosting to security updates to performance optimization so you can focus on your business.</p>
-</article>
-</div>
-
-<article class="service-row-col" aria-label="SEO & Content Strategy">
-<h3>SEO + CONTENT STRATEGY</h3>
-<p>Data-informed keyword research and compelling content that ranks, engages your audience, and drives growth.</p>
-</article>
-
-(article class="service-row-col" aria-label="Branding & Identity Design">
-<h3>BRANDING & IDENTITY</h3>
-<p>Logos, color systems, typography treatment packages — complete visual identity for startups or rebrands that stand apart.</p>
-</article>
-
-</main>
-</section>
-
-<!-- Interactive demo booking zone -->
-<section class="transition-all-section" id="demo-sites">
-<main tabindex="-1" aria-label="Interactive site demonstrations">
-<h2 style="font-size:clamp(2rem,5.5vw,3.8rem);text-align:center;margin-bottom:min(.6em,var(--gap-size))">WATCH YOUR BUSINESS<br><span style="color:#a855f7;text-shadow:var(--shadow)">ACTIVELY TRANSFORM</span></h2>
-
-<div class="demo-booker-widget">
-<h3>CRAFT &amp; CUTS BOOKING EXAMPLE</h3>
-<div class="demo-booker-interface">
-<h4>BOOK SERVICES ONLINE</h4>
-<p>A fully interactive booking system with service selection, pricing display,</p>
-<p>real-time calendar visibility and payment processing integration.</p>
-</div>
-</div>
-
-<article class="service-row-col" hidden><h3>YOUR BOOKING INTERFACE</h3></article>
-
-<p style="width:100%;text-align:center;padding:min(8vw,64px) 0;font-size:.9rem;opacity:.7;margin:-calc(min(var(--gap-size),28px)) 0 min(3.5vw,24px)">This is the booking interface you get — responsive, fast, conversion-optimized.</p>
-
-</main>
-</section>
-
-<!-- Services showcase transition -->
-<section class="transition-all-section" aria-label="Service showcase">
-<main tabindex="-1">
-<h2 style="font-size:clamp(2rem,5vw,3.8rem);text-align:center;margin-bottom:min(.6em,var(--gap-size))">FROM CONCEPT<br><span style="color:#a855f7;text-shadow:var(--shadow)">TO COMPLETION</span></h2>
-<p aria-hidden="true" style="font-size:clamp(1rem,3vw,1.05rem);opacity:.7;max-width:450px;padding:min(.6em,var(--gap-size)) auto;text-align:center">Every Yementi-built digital experience ships faster — without sacrificing quality.</p>
-
-<article class="service-row-col" aria-label="Rapid Delivery">
-<h3>RAPID DELIVERY</h3>
-<p>Our streamlined workflow ensures your site launches promptly, letting you focus on revenue-generating activities.</p>
-</article>
-
-<article class="service-row-col" aria-label="Mobile-First Design">
-<h3>MOBILE-FIRST DESIGN</h3>
-<p>Every pixel works beautifully across mobile, tablet, and desktop — optimized for every device your customers use.</p>
-</article>
-</section>
-
-<!-- Final CTA section -->
-<section class="transition-all-section" id="contact" aria-label="Contact us">
-<footer class="contact-cta-footer">
-<main tabindex="-1"><h2 class="cta-headline">YOUR BUSINESS DOESN'T NEED<br><span style="color:#a855f7;text-shadow:var(--shadow)">ANOTHER WEBSITE</span></h2>
-<p class="cta-subhead">IT NEEDS AN EXPERIENCE.<br>Let's build something memorable.</p>
-
-<article class="service-row-col" aria-label="Get Started CTA">
-<h3 style="font-size:clamp(1.5rem,4vw,2.2rem);margin-bottom:min(.6em,var(--gap-size));color:#a855f7;text-shadow:var(--shadow)">LET'S BUILD<br>SOMETHING IMPRESSIVE</h3>
-<p style="font-size:clamp(.9rem,2.3vw,.95rem);line-height:1.5">Get in touch for a consultation about building your next digital experience.</p>
-</article>
-
-<div class="contact-methods">
-<p>Email hello@yementi.io | Let's talk shop</p>
-
-</div></main>
-</footer>
-</section>
-
-<!-- Hidden: Legacy portal access hook -->
-<main tabindex="-1" id="hidden-portal-access"></main>
-
-=======
-<title>YEMENTI.IO — Premium Portfolio Site</title>
-<style>
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    :root{--bg:#050510;--text:#e8e9f0;--accent:#6366f1}
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{background:black;color:var(--text);font-family:'Rajdhani',sans-serif;min-height:100vh;display:flex;flex-direction:column}
-    nav{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;padding:24px 6%;backgroundrgba(5,5,16,.8);backdrop-filter:blur(24px)}
-    .nav-links{display:flex;gap:clamp(var(--gap),24px);margin-left:auto}
-    nav a{text-decoration:none;color:hsla(217,90%,95%,.8);transition:border-color .2s ease}
-    nav a:hover{border-bottom-color:var(--accent)}
-    main{min-height:calc(100vh - 70px);padding-top:8%}
-    .hero{text-align:center;padding:clamp(var(--gap),48%) 5%;background:linear-gradient(185deg,#02020a,transparent)}
-    h1{font-size:clamp(3rem,9vw,6rem);line-height:.9;margin-bottom:24px;color:#fff;letter-spacing:-.02em}
-    .subtitle{opacity:.7;font-size:clamp(.9rem,2.5vw,1rem)}
-    .demo-selector{display:flex;gap:clamp(var(--gap),32px);flex-wrap:wrap;padding:clamp(48px,-6%,72px) var(--padding) align-items:flex-start justify-content:center}
-    .card{minmax(160px,320px);backgroundrgba(99,102,241,.04);border-radius:24px;padding:clamp(var(--gap),5vw,48px);cursor:pointer;border:1px solid rgba(255,255,255,.08)}
-    .card.active{backgroundrgba(99,102,241,.15)}
-    .card:hover h3{color:#fff}
-    .card:is(:hover,:focus-within) {border-color:var(--accent)}
-    .card h3{font-size:clamp(.9rem,2.5vw,1rem);color:#c8cad0;font-weight:500;transition:text-shadow .3s ease}
-</style>
+html,body{height:100%;overflow-x:hidden;font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);cursor:default;scroll-behavior:smooth}
+body>nav.navbar{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;padding:16px 6%;background:rgba(2,2,8,.95);backdrop-filter:blur(40px);z-index:1000;border-bottom:1px solid rgba(255,255,255,.03);transition:border-color .3s ease}
+body>nav.navbar.scrolled{padding:12px 6%;background:rgba(2,2,8,.98)}
+body>nav.navbar a.logo{font-family:'Rajdhani',sans-serif;font-size:clamp(1.4rem,4vw,2rem);font-weight:700;color:#fff;text-decoration:none;text-transform:uppercase;letter-spacing:3px;display:flex;align-items:center;gap:12px}
+body>nav.navbar a.logo::before{content:'';display:block;width:8px;height:8px;background:var(--accent);border-radius:50%;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.3)}}
+body>nav.navbar .nav-links{display:flex;gap:clamp(8px,2.5vw,24px);margin-left:auto}
+body>nav.navbar .nav-link{text-decoration:none;color:hsla(0,0%,95%,.7);font-size:.85rem;font-weight:500;transition:color .2s ease,opacity .2s ease}
+body>nav.navbar .nav-link:hover,body>nav.navbar .nav-link:focus{color:#fff;opacity:.9}
+main.main-content{min-height:calc(100vh - 80px);will-change:auto}
+main.hero-main{position:relative;min-height:calc(100vh - 80px);display:flex;flex-direction:column;align-items:center;padding-top:clamp(35%,60vh);padding-bottom:clamp(25%,40vh);text-align:center;background:radial-gradient(120% 120% at 50% 0%,#1a1d2e 0%,transparent 55%),linear-gradient(180deg,#020208 60%,#0a0c14)}
+main.hero-main::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 85% -10%,rgba(255,107,53,.12),transparent 40%);pointer-events:none}
+main.hero-main h1{font-family:'Rajdhani',sans-serif;font-size:clamp(3rem,10vw,6rem);font-weight:700;letter-spacing:-2px;line-height:.95;margin-bottom:clamp(18px,4vw,28px);animation:textReveal .8s cubic-bezier(.2,.8,.2,1)}
+@keyframes textReveal{from{o}to{text-fill-opacity:1}}
+main.hero-main span.accent-text{background:linear-gradient(180deg,var(--accent),var(--accent-2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:italic;animation:glow .6s ease-in-out 3.5s infinite alternate-reverse}
+@keyframes glow{from,To{opacity:1}20%{opacity:.7}}
+main.hero-main p.subtitle{font-size:clamp(.9rem,2.8vw,1.15rem);color:hsla(204,75%,60%,.7);max-width:640px;line-height:1.6;margin-bottom:clamp(30px,8vw,60px);animation:fadeInUp .8s ease-in-out 50ms both}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+main.hero-main .scroll-indicator{position:absolute;bottom:clamp(30%,45vh);left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;animation:bounce 2s ease-in-out infinite}
+main.hero-main .scroll-indicator svg{width:26px;height:26px;stroke:currentColor;stroke-width:1.4;fill:none;opacity:.6}
+@keyframes bounce{0%,100%{transform:translateX(-50%)}50%{transform:translateX(-50%) translateY(8px)}}
+body.transition-main h2.title-text{font-family:'Rajdhani',sans-serif;font-size:clamp(1.6rem,4.5vw,3rem);font-weight:700;letter-spacing:.02em;margin-bottom:clamp(20px,5vw,35px);color:#fff;text-align:center}
+body.transition-main .fade-block{opacity:1;transform:translateY(0)}
+body.transition-main.fade-in .fade-block{opacity:0;transform:translateY(30px)}
+body.transition-main .section-transition{min-height:calc(100vh - 0);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:clamp(25%,40vh) clamp(6vw,80px);gap:clamp(2%,12vw)}
+body.transition-main.fade-section .section-transition{min-height:auto;display:block}
+body.transition-main .business-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,35vw),240px));gap:clamp(16px,4vw,32px);padding:clamp(8%,24vh) clamp(7vw,100px) clamp(12%,34vh)}
+body.transition-main .business-card{background:var(--surface);border-radius:20px;padding:clamp(20px,5vw,40px);cursor:pointer;transition:transform .3s cubic-bezier(.3,.7,.4,1),background .3s ease,border-color .3s ease}
+body.transition-main .business-card:hover{transform:translateY(-8px)}
+body.transition-main .business-card:focus{outline:2px solid var(--accent);outline-offset:4px}
+body.transition-main .business-card h3{font-family:'Rajdhani',sans-serif;font-size:1.1rem;margin-bottom:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+body.transition-main .business-card p{font-size:.75rem;color:hsla(204,75%,60%,.7);line-height:1.5;min-height:3.5em}
+body.transition-main .business-card .tag{display:inline-block;font-size:.68rem;background:rgba(88,101,242,.15);padding:4px 10px;border-radius:12px;color:#fff;margin-bottom:8px}
+body.transition-main .demo-preview{position:relative;height:180px;background:linear-gradient(180deg,#1a1d2e 0%,#151724 100%);border-radius:16px;overflow:hidden;display:flex;align-items:center;padding:clamp(12%,34vh) clamp(5vw,60px)}
+body.transition-main .demo-preview::before{content:'';position:absolute;inset:0;background:image-set(url('/images/business-placeholder.png') 2x);background-size:cover;background-position:center}
+main.business-showcase h2.title-text{margin-bottom:clamp(10%,30vh),clamp(6vw,80px)}
+main.business-showcase p.subtitle{max-width:min(500px,calc(100% - 72px));margin:auto;text-align:center}
+body.demo-active .demo-preview.active-demo{cursor:pointer}
+body.demo-active .demo-preview.active-demo::after{content:attr(data-label);position:absolute;bottom:-38px;left:50%;transform:translateX(-50%);background:#1a1d2e;border-radius:12px;padding:6px 14px;font-size:.7rem;color:#fff}
+body.demo-active .demo-preview:hover::after{bottom:-42px}
+body.scripts-section .hero-background .gradient-orb-main{opacity:.5}
+main.services-intro p.lead-text{font-size:clamp(1rem,3vw,1.2rem);color:hsla(0,0%,95%,.7);line-height:1.8;text-align:center;max-width:720px;margin-bottom:clamp(40px,10vw,60px)}
+main.services-intro .service-highlight{background:linear-gradient(135deg,rgba(88,101,242,.15),rgba(255,107,53,.1));border-radius:24px;padding:clamp(24%,60vh) clamp(7vw,90px);text-align:center;margin:auto;display:block;transition:min-height .4s cubic-bezier(.2,.8,.2,1)}
+main.services-intro .service-highlight.expanded{min-height:calc(min(350px,var(--highlight-min-height)) + 60px);padding-bottom:calc(var(--highlight-min-height) + clamp(24%,60vh),70px)}
+main.services-intro .service-highlight h3{font-family:'Rajdhani',sans-serif;font-size:clamp(1.5rem,4vw,2rem);margin-bottom:clamp(16px,4vw,28px);color:#fff}
+main.services-intro .service-highlight ul{list-style:none;display:flex;flex-wrap:wrap;gap: clamp(10%,30vh)}
+main.services-intro .service-highlight li{font-size:.9rem;color:hsla(204,75%,60%,.8);padding-left:1em;position:relative}
+main.services-intro .service-highlight li::before{content:'•';color:var(--accent);position:absolute;left:-.3em}
+body.demo-loaded .business-card.is-selected{background:linear-gradient(135deg,rgba(88,101,242,.2),rgba(255,107,53,.1));border:1px solid rgba(88,101,242,.3);transform:scale(1.02)}
+body.demo-loaded .business-card.is-selected h3{color:#fff}
+main.creative-intro p.lead-text{max-width:700px;margin:auto;text-align:center}
+main.creative-intro .preview-container{position:relative;min-height:calc(min(450px,var(--preview-min-height, 480px) - 60px);margin:auto;display:flex;align-items:center;justify-content:center}
+main.creative-intro .website-preview-wrapper{width:min(100%,740px);background:#fff;border-radius:24px;padding:clamp(25%,60vh) clamp(8vw,100px) clamp(50px,var(--preview-min-height));overflow:hidden;transition:opacity .4s ease,transform .5s cubic-bezier(.3,.7,.4,1);will-change:transform;box-shadow:0 50px 120px rgba(0,0,0,.8),inset 0 -10px 40px rgba(0,0,0,.15)}
+main.creative-intro .website-preview-wrapper.reveal-up{opacity:0;transform:translateY(60px) scale(.98)}
+main.creative-intro .website-preview-wrapper.reveal-full{opacity:1;transform:translateY(0) scale(1)}
+body.demo-loaded .website-preview-wrapper.reveal-full{display:block}
+body.demo-loaded .website-preview-wrapper:not(.reveal-full){display:none}
+main.creative-intro .c-type-text{font-family:'Rajdhani',sans-serif;font-size:clamp(.85rem,3vw,.95rem);color:hsla(0,0%,95%,.6);text-align:center;margin-top:12px;transition:opacity .4s ease}
+body.demo-loaded .c-type-text.hidden{opacity:0}
+main.cta-section cta-button{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(180deg,#f7931a,#e67e00);color:#fff;padding:clamp(14px,4.5vw,20px) clamp(28px,8vw);border-radius:12px;font-family:'Rajdhani',sans-serif;font-size:1.1rem;font-weight:600;letter-spacing:-.02em;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease}
+main.cta-section cta-button:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(247,147,26,.25)}
+main.cta-section p.copyright{font-size:.8rem;color:hsla(0,0%,95%,.3);margin-top:clamp(12%,35vh);text-align:center;opacity:.5;font-family:'Inter',sans-serif}
+@media(max-width:960px){body>nav.navbar{padding:14px 5%}}
+@media(hid-scrollbars) main.cta-section .scroll-hint{content:''}</style>
 </head>
-<body>
-
-<nav>
-<a style="margin-right:auto;text-decoration:none;color:#fff" href="#hero">YEMENTI.IO</a>
-<div class="nav-links">
-<a href="#demo-sites">DEMO SITES</a>
-<a href="#services">SERVICES</a>
-<a href="#contact">CONTACT</a>
-</div>
-</nav>
-
-<main id="content" tabindex="-1">
-
-<section class="hero" id="hero" aria-label="Welcome to Yeventi">
-<h1 id="site-title"></h2>
-<p class="subtitle" id="site-subtitle"></p>
-</section>
-
-<aside class="demo-selector" style="margin-bottom:calc(-1 * var(--gap))" aria-label="Select a business type">
-<button class="card active" data-business="barber" tabindex="-1">
-<h3>Barber Shop Site</h3>
-<p style="font-size:.75rem;opacity:.6;margin:-.3em 0 .6em">Classic cuts, gold accents</p>
-</button>
-<button class="card" data-business="restaurant" tabindex="-1">
-<h3>Restaurant Site</h3>
-<p style="font-size:.75rem;opacity:.6-margin">Dining experience with gallery</p>
-</button>
-<button class="card" data-business="salon" tabindex="-1">
-<h3>Salon & Stylist Site</h3>
-<p style="font-size:.75rem;opacity:.6;margin:-.3em 0 .6em">Hair portfolio showcase</p>
-</button>
-<button class="card" data-business="church" tabindex="-1">
-<h3>Church Community Site</h3>
-<p style="font-size:.75rem;opacity:.6;margin:-.3em 0 .6em">Events, giving, programs</p>
-</button>
-<button class="card" data-business="contractor" tabindex="-1">
-<h3>Contracting Portfolio</h3>
-<p style="font-size:.75rem;opacity:.6-margin">Kitchen renovations gallery</p>
-</button>
-<button class="card" data-business="groomer" tabindex="-1">
-<h3>Pet Grooming Site</h3>
-<p style="font-size:.75rem;opacity:.6;margin:-.3em 0 .6em">Happy clients, mobile booking</p>
-</button>
-</aside>
-
-<section id="site-showcase" style="padding:calc(2 * var(--gap)) 0;width:100%" tabindex="-1" aria-label="Business site showcase">
-<main>
-<h2 style="font-size:clamp(2rem,6vw,3.5rem);text-align:center;margin-bottom:48px;text-shadow:0 8px 60px rgba(99,102,241,.2)"></h2>
-<div id="demo-content">
-</div>
-<p style="width:100%;text-align:center;padding:var(--gap) 0;font-size:.9rem;">Select a business type above to see what your site could look like.</p>
-</main>
-</section>
-
-<section class="hero" id="services" aria-label="Our Services">
-<h2></h2>
-<p><span style="color:#a855f7;text-shadow:0 8px 60px rgba(99,102,241,.3)">FOR LOCAL BUSINESSES</span></p>
-</section>
-
-<section style="padding:calc(4 * var(--gap)) 5%;max-width:1000px;margin:auto" aria-label="Service details">
-<div id="service-list">
-<div class="service-item"></div>
-<div class="service-item"></div>
-<div class="service-item"></div>
-</div>
-</section>
-
-<footer style="padding:48 5%;border-top:1px solid rgba(255,255,255,.08);text-align:center;font-size:.9rem;color:#6b7280;background:linear-gradient(180deg,rgba(99,102,241,.03),transparent)" aria-label="Footer">
-<main>
-<h3 style="font-size:clamp(1.5rem,4vw,2.2rem);margin-bottom:.6em;color:#a855f7;text-shadow:0 8px 60px rgba(236,72,153,.2)">LET'S BUILD SOMETHING</h3>
-<p style="font-size:.9rem;opacity:.8">hello@yementi.io | Let's build your premium business site.</p>
-</main>
-</footer>
-
-<script style="display:none">//<![CDATA[
-document.addEventListener('DOMContentLoaded', () => {
-    const showcase = document.getElementById('demo-content');
-    const cards = document.querySelectorAll('.card');
-    const title = document.getElementById('site-title');
-    const subtitle = document.getElementById('site-subtitle');
-    const h2 = document.querySelector('#services h2');
-    
-    const templates = {
-        barber: {name:'CRISP & KNIFE', bg:'#1a150f', heroText:'PRECISION GROOMING SINCE 1987', subtext:'Welcome to Crisp & Knife — where classic barbering meets modern comfort.', cta:'BOOK YOUR APPOINTMENT', footer:'© 2024 Crisp & Knife. All rights reserved.'},
-        restaurant: {name:'SILKS & STEAK', bg:'#2a0f0f', heroText:'FINE DINING BY THE RIVER', subtext:'Savor locally-sourced proteins and seasonal vegetables in an intimate riverside dining room.', cta:'VIEW OUR MENU', footer:'© 2024 Silks & Steak. All rights reserved.'},
-        salon: {name:'LUMIÈRE BLONDE', bg:'#151210', heroText:'LUXURY HAIR DESIGN STUDIO', subtext:'Transform your hair journey at Lumière Blonde — a gold-standard studio specializing in blonde expertise.', cta:'APPOINTMENT REQUEST', footer:'© 2024 Lumière Blonde. All rights reserved.'},
-        church: {name:'TRINITY COMMUNITY', bg:'#0e141a', heroText:'WELLNESS & WORSHIP FOR ALL', subtext:'A welcoming congregation for the community. Join us as we gather to serve in person or through our virtual broadcast.', cta:'GIVE ONLINE', footer:'© 2024 Trinity Community Church. All rights reserved.'},
-        contractor: {name:'MERCATOR CONTRACTING', bg:'#1a160f', heroText:'HOME RENOVATIONS & KITCHENS', subtext='Built on over 25 years of craftsmanship, our residential team transforms dream spaces into living realities.', cta:'REQUEST FREE ESTIMATE', footer:'© 2024 Mercator Contracting. All rights reserved.'},
-        groomer: {name:'PAW PAWN', bg:'#0f140d', heroText:'PROMPT & HAPPY PET GROOMING', subtext='We transform stressed-out pets into spa-relaxed fur-babies with mobile grooming service.', cta:'BOOK YOUR PUPPY', footer:'© 2024 Paw Pawn Grooming. All rights reserved.'},
-    };
-
-    cards.forEach(card => {
-        card.addEventListener('click', () => {
-            cards.forEach(c => c.classList.remove('active'));
-            card.classList.add('active');
-            const biz = templates[card.dataset.business];
-            showcase.innerHTML = `
-                <style>.business-bg{background:linear-gradient(135deg,var(--bg),#000)!important}</style>
-                <div class="demo-nav"><span style="font-weight:700;font-size:1.1rem">${biz.name}</span></div>
-                <div class="demo-hero" style="${biz.bg};padding:80px 40px;text-align:center;color:#fff">
-                    <h2 style="font-size:clamp(2rem,5vw,3rem);margin-bottom:16px">${biz.heroText}</h2>
-                    <p style="opacity:.9;font-size:1rem;max-width:500px;margin:0 auto;line-height:1.6">${biz.subtext}</p>
-                    <a href="#contact" class="cta-button" style="margin-top:24px;padding:14px 32px;border-radius:8px;background:var(--accent);color:#fff;font-weight:600;text-decoration:none;transition:transform .3s ease">${biz.cta}</a>
-                </div>
-                <div class="demo-gallery" style="padding:60px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
-                    ${['Gallery Item 1','Before & After','Portfolio Item','Service Menu','Happy Clients','Contact Info'].map(g => `<div class="demo-gallery-item" style="aspect-ratio:4/3;backgroundrgba(99,102,241,.08);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:.8rem;color:#6b7280;border:1px solid rgba(255,255,255,0.05)"></div>`).join('')}
-                </div>
-                <footer class="demo-footer" style="text-align:center;padding:24px;border-top:1px solid rgba(255,255,255,0.05);font-size:.8rem;color:#6b7280;font-family:'Inter">${biz.footer}</footer>
-            `;
-            
-            h2.textContent = 'THIS IS WHAT YOUR SITE CAN LOOK LIKE';
-        });
-        
-        card.addEventListener('mouseenter', () => {
-            title.style.opacity = .5;
-            subtitle.style.opacity = .3;
-        });
-        card.addEventListener('mouseleave', () => {
-            title.style.opacity = 1;
-            subtitle.style.opacity = .7;
-        });
-    });
-
-    cards[0].click();
-});
-]]></script>
->>>>>>> dc3ba5e (Update index.html — premium portfolio site for local businesses)
+<body id="home-body">
+<nav class="navbar" id="site-nav"><a href="#home-body" class="logo"><span style="display:block;width:8px;height:28px;background:linear-gradient(180deg,rgba(255,107,53,.9),rgba(247,147,26,.8));border-radius:4px;transform:rotate(-45deg);margin-top:-4px"></span> YEMENTIO</a><div class="nav-links"><a href="#home-body" class="nav-link" title="Home">Home</a><a href="#explore-businesses" class="nav-link" title="Explore Business Sites">Business Sites</a><a href="#what-we-build" class="nav-link" title="What We Build">What We Build</a><a href="#build-your-site" class="nav-link" title="Build Your Site">Get Started</a></div></nav>
+<main class="main-content hero-main" id="home-page"><h1 class="hero-title">WE BUILD PREMIUM <span class="accent-text">WEBSITES FOR LOCAL BUSINESSES</span></h1><p class="subtitle">YEMENTI creates high-impact, mobile-first websites that help barsber shops, restaurants, salons, contractors and all local businesses attract new customers through powerful contact forms and seamless digital experiences.</p><div class="scroll-indicator" aria-label="Scroll down"><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5H7z"/></svg><span style="font-size:.65rem;color:hsla(0,0%,95%,.5);font-weight:300">Scroll to Explore</span></div><div class="hero-background"><div class="gradient-orb-main" aria-hidden="true"></div></div></main>
+<main class="main-content transition-main fade-in" id="transition-page"><h2 class="title-text fade-block">YOUR BUSINESS DESERVES MORE THAN A TEMPLATE</h2><div class="section-transition business-grid" style="--highlight-min-height:280px"><div class="business-card demo-preview" data-label="Barber Shop Demo Site" aria-hidden="true"><span class="tag">Local Business Portfolio</span>A modern design for barbers<br>with service pricing and location details</div><div class="business-card demo-preview" data-label="Salon & Spa Website"><span class="tag">Beauty Services Focus</span>Elegant salon showcase with<br>booking capability and gallery</div><div class="business-card demo-preview" data-label="Restaurant & Cafe Site"><span class="tag">Food Business Hub</span>Menu, reservations and<br>online ordering integration</div><div class="business-card demo-preview" data-label="Contractor Portfolio"><span class="tag">Service Professional</span>Showcasing projects with<br>contact form for inquiries</div><div class="business-card demo-preview" data-label="Medical Practice Site"><span class="tag">Healthcare Digital</span>Appointments, services and<br>patient information center</div></div><form id="demo-form" style="display:none" aria-hidden="true"></form><input type="hidden" name="demo-active-site" id="demo-active-site"/><h2 class="title-text fade-block">BUILT FOR YOUR INDUSTRY</h2><div class="section-transition business-grid" style="--highlight-min-height:260px"><div class="business-card demo-preview" data-label="Church & Community Site"><span class="tag">Faith-Based Organization</span>Events, sermons and<br>volunteer coordination tools</div><div class="business-card demo-preview" data-label="Auto Repair Shop Site"><span class="tag">Automotive Professional</span>Services, fleet list and<br>appointment scheduling system</div></div><main class="main-content services-intro fade-in"><p class="lead-text fade-block">We create custom websites tailored to your business needs. No monthly fees, no complicated platforms — just a premium site that works for you.</p><div class="service-highlight" id="interactive-services" style="--highlight-min-height:240px"><h3 class="fade-block">What We Build Today</h3><ul class="fade-block"><li>Complete business websites with custom design</li><li>Contact forms and lead capture systems</li><li>Social media integration across platforms</li><li>Mobile-first layouts that work perfectly</li><li>Fast loading times optimized for local search</li></ul></div><main id="business-showcase" class="main-content creative-intro fade-in"><p class="lead-text">Choose your business type and see how we can build your digital presence:</p><div class="preview-container" style="--preview-min-height:400px"><div class="website-preview-wrapper reveal-full" aria-hidden="true" id="demo-site"><h1 style="color:#000;font-size:2rem;text-align:center;font-family:sans-serif;letter-spacing:-.5px">Premium Business Website</h1><img src="/placeholder-home.png" alt="" style="width:100%;height:auto;display:block;border-radius:8px;margin:30px auto"><div style="text-align:center;color:#666;max-width:420px;font-size:.9rem">Your business gets a premium digital experience that captures your brand and builds customer trust</div></div><p class="c-type-text hidden" id="demo-desc">Select a business type to see how we can bring your website vision to life</p></div><main id="cta-section" style="margin-top:clamp(15%,45vh);display:flex;flex-direction:column;align-items:center;text-align:center;background:#0a0c14;padding:clamp(60px,15vw,80px)"><form id="build-form" style="display:flex;flex-direction:column;gap:clamp(2%,8vw);width:max-content" aria-hidden="true"><a href="#cta-section" class="cta-button" id="start-building-btn">BUILD MY BUSINESS WEBSITE <span style="font-size:.9rem;font-weight:400">→</span></a><p class="copyright">© 2026 YEMENTIO. Premium Static Business Websites + Contact Forms.</p></form></main></body>
+<script>document.addEventListener('DOMContentLoaded',()=>{const nav=location.pathname.toLowerCase()==='/home-page';if(nav)return;const n=document.getElementById('site-nav'),a=document.querySelectorAll('.hero-main .navbar');a.forEach(x=>n.insertBefore(x,n.firstElementChild));document.querySelector('#business-showcase .website-preview-wrapper[aria-labelledby="demo-site"]').innerHTML='<img src="/placeholder-home.png" alt="" style="width:100%">';});</script>
 </body>
 </html>
