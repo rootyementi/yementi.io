@@ -1,18 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Yementi.io — Premium Cloud Infrastructure</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Yementi.io — Premium Cloud Hosting</title>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Rajdhani',sans-serif;background:linear-gradient(180deg,rgba(2,0,50,.95),rgba(25,5,90,.95)) min-content fixed;color:#fff;cursor:default}
-.orb-1{position:absolute;border-radius:50%;filter:blur(40px);opacity:.3;pointer-events:none;background:conic-gradient(from 180deg,#7c3aed,transparent);width:85vh;height:85vh;top:-20vh;left:-20%;animation:spin 25s linear infinite}@media(max-width:900px){.orb-1{display:none;}}@keyframes spin{to{transform:rotate(1turn)}}
+* { margin: 0; padding: 0; box-sizing: border-box }
+body {
+  font-family: 'Rajdhani', sans-serif;
+  background: linear-gradient(180deg, rgba(2, 0, 50, 0.95), rgba(25, 5, 90, 0.95)) no-repeat fixed;
+  color: #fff;
+  cursor: default;
+}
+main { min-height: 100vh; width: 100%; }
 
-/* Parallax scroll containers */
-.scroll-pin-section{position:relative;height:60vh;overflow:hidden;display:flex;align-items:center;width:100%}
-.pin-layer-back{position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at center,var(--bg-color,rgba(58,114,180,.5)),transparent);transform-style:preserve-3d}
-.pin-layer-front{position:relative;z-index:1}
+/* Hero section */
+.hero {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(3rem, 10vw, 7rem);
+  text-align: center;
+  margin-bottom: 40px;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, -50%);
+  font-weight: 700;
+  background: linear-gradient(180deg, #fff, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-/* Hero title effects */
-.hero-title{font-family:'Orbitron',sans-serif;font-size:clamp(2rem,8vw,7rem);text-transform:uppercase;font-weight:700;margin-bottom:40px;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%).hero-title:hover{transform:translate(-50%,-45%) scale(1.02)}.hero-title span{display:block;color:transparent;-webkit-text-stroke:1
+/* Animated orbs */
+.orb1 {
+  position: absolute;
+  top: 10%;
+  left: -10%;
+  width: 85vh;
+  height: 85vh;
+  border-radius: 50%;
+  background: conic-gradient(from 180deg, #7c3aed, transparent);
+  filter: blur(60px);
+  opacity: 0.4;
+  animation: rotate 25s linear infinite;
+}
+.orb2 {
+  position: absolute;
+  bottom: -10%;
+  right: -5%;
+  width: 90vh;
+  height: 90vh;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ec4899, transparent);
+  filter: blur(60px);
+  opacity: 0.3;
+}
+@keyframes rotate { to { transform: rotate(360deg); } }
+
+/* Features cards */
+.features { padding: 100px 20px; display: flex; gap: clamp(20px, 6vw, 40px); flex-wrap: wrap; justify-content: center; }
+.feature-card {
+  background: rgba(30, 40, 95, 0.15);
+  backdrop-filter: blur(30px);
+  border-radius: 24px;
+  padding: clamp(30px, 8vw, 60px);
+  min-width: calc(33% - 20px);
+  max-width: 300px;
+  transition: all 0.4s ease;
+}
+.feature-card:hover { background: rgba(30, 40, 95, 0.25); transform: translateY(-8px); }
+.feature-title { font-size: 1.8rem; margin-bottom: 15px; color: #a855f7; }
+.feature-desc { font-size: 1rem; opacity: 0.8; line-height: 1.6; }
+
+/* Particles */
+.particles { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 100; }
+.particle { position: absolute; border-radius: 50%; background: rgba(98, 77, 254, 0.6); filter: blur(4px); width: 60px; height: 60px; animation: float 8s ease-in-out infinite both; }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-60px); } }
+</style>
+<body>
+<main>
+<section class="hero"><div class="orb1" id="orb1"></div><div class="orb2" id="orb2"></div>
+<h1 class="hero-title">YEMENTIO<br><span style="font-size:clamp(1.5rem,5vw,3rem);display:block;color:#a855f7;margin-top:20px;">Premium Cloud Infrastructure</span></h1>
+</section>
+
+<section class="features" id="features">
+<article class="feature-card">
+<h2 class="feature-title">Enterprise Grade Performance</h2>
+<p class="feature-desc">Built on world-class data centers with 99.9% uptime guarantee and enterprise-level security.</p>
+</article>
+
+<article class="feature-card">
+<h2 class="feature-title">Global CDN Network</h2>
+<p class="feature-desc">Content delivery across 200+ cities worldwide with sub-50ms response times everywhere.</p>
+</article>
+
+<article class="feature-card">
+<h2 class="feature-title">DDoS Protection</h2>
+<p class="feature-desc">Advanced threat detection and mitigation systems keeping your services always online.</p>
+</article>
+
+<article class="feature-card">
+<h2 class="feature-title">NVMe Storage</h2>
+<p class="feature-desc">High-speed NVMe SSD storage with enterprise encryption for your critical data.</p>
+</article>
+
+<article class="feature-card">
+<h2 class="feature-title">24/7 Expert Support</h2>
+<p class="feature-desc">Round-the-clock support from our dedicated team of cloud infrastructure specialists.</p>
+</article>
+
+<article class="feature-card">
+<h2 class="feature-title">Auto Scaling</h2>
+<p class="feature-desc">Automatically adjust resources with your traffic to optimize costs and performance.</p>
+</article>
+</section>
+</main></body>
+</html>
