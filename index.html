@@ -3,124 +3,228 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Yementi.io — Premium Cloud Hosting</title>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+<title>Yementi.io — Build Digital Experiences</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box }
-body {
-  font-family: 'Rajdhani', sans-serif;
-  background: linear-gradient(180deg, rgba(2, 0, 50, 0.95), rgba(25, 5, 90, 0.95)) no-repeat fixed;
-  color: #fff;
-  cursor: default;
+:root{--bg:#050510;--text:#e8e9f0;--accent:#6366f1;--accent-2:#ec4899;--nav-bg:rgba(5,5,16,0.7);--card-bg:rgba(255,255,255,0.02)}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow-x:hidden;font-family:'Rajdhani',sans-serif;background:black;color:var(--text);cursor:default}
+body>nav.navbar{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;padding:24px 6%;background:var(--nav-bg);backdrop-filter:blur(30px);z-index:1000;border-bottom:1px solid rgba(255,255,255,0.08)}
+body>nav .nav-flex{display:flex;align-items:center;gap:clamp(16px,4vw,32px)}
+body>nav .logo{font-family:'Inter',sans-serif;font-size:1.6rem;font-weight:700;color:#fff;text-decoration:none;text-transform:uppercase;letter-spacing:2px}
+body>nav .nav-links{display:flex;gap:clamp(8px,3vw,24px);flex-wrap:wrap}
+body>nav .nav-link{text-decoration:none;color:hsla(217,90%,95%,.85);font-size:.9rem;font-weight:400;padding-bottom:6px;border-bottom:2px solid transparent;transition:border-color .2s ease,text-shadow .3s ease}
+body>nav .nav-link:hover,body>nav .nav-link[data-target="hero"]{color:#fff;border-color:var(--accent)}
+body main[tabindex="-1"].main-content{min-height:calc(100vh - 80px);cursor:auto;overflow:hidden}
+.body-scroll-enabled.main-content{cursor:default;background:linear-gradient(185deg,#02020a.6,transparent),radial-gradient(at 30% 20%,rgba(100,100,255,.04),transparent 40%),radial-gradient(at 85% 70%,rgba(236,72,153,.04),transparent 40%)
 }
-main { min-height: 100vh; width: 100%; }
+body.main-content main.hero-section{min-height:calc(100vh - 80px);display:flex;flex-direction:column;align-items:center;padding-top:280px;padding-bottom:clamp(20%,120px)}
+body.main-content main.hero-section h1.hero-title{text-align:center;font-size:clamp(3rem,9vw,9rem);line-height:.9;margin-bottom:24px;letter-spacing:-2px;text-shadow:0 4px 60px rgba(99,102,241,.4)}
+body.main-content main.hero-section p.hero-subtitle{font-size:clamp(.85rem,2.5vw,1.1rem);opacity:.7;margin-bottom:80px;text-align:center;max-width:600px}
+body.main-content main.hero-background{position:absolute;inset:0;-webkit-mask:linear-gradient(bottom,#1a192e 50%,transparent),conic-gradient(from 90deg#6366f1 0 6turn,transparent,var(--text));mask:var(--mask)}
+body.main-content main.hero-background .hero-orb{position:absolute;background:radial-gradient(circle at 40% 50%,rgba(99,102,241,.3),transparent);border-radius:50%;filter:blur(60px);animation:orbFloat 20s ease-in-out infinite alternate}
+@media(max-width:890px){.body-scroll-enabled.main-content{cursor:auto}}
 
-/* Hero section */
-.hero {
-  min-height: calc(100vh - 80px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-.hero-title {
-  font-family: 'Orbitron', sans-serif;
-  font-size: clamp(3rem, 10vw, 7rem);
-  text-align: center;
-  margin-bottom: 40px;
-  position: absolute;
-  left: 50%;
-  top: 20%;
-  transform: translate(-50%, -50%);
-  font-weight: 700;
-  background: linear-gradient(180deg, #fff, #a855f7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+/* Section transitions */
+transition-all-section{min-height:calc(100vh - 0px);padding:clamp(10%,40px);padding-top:5%;display:flex;flex-direction:column;align-items:center}
+section.transition-into-new-content{background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.0));border-top:1px solid rgba(99,102,241,.1)}
+@media(max-width:890px){section.transition-into-new-content{padding:clamp(8%,30px)}}
 
-/* Animated orbs */
-.orb1 {
-  position: absolute;
-  top: 10%;
-  left: -10%;
-  width: 85vh;
-  height: 85vh;
-  border-radius: 50%;
-  background: conic-gradient(from 180deg, #7c3aed, transparent);
-  filter: blur(60px);
-  opacity: 0.4;
-  animation: rotate 25s linear infinite;
-}
-.orb2 {
-  position: absolute;
-  bottom: -10%;
-  right: -5%;
-  width: 90vh;
-  height: 90vh;
-  border-radius: 50%;
-  background: radial-gradient(circle, #ec4899, transparent);
-  filter: blur(60px);
-  opacity: 0.3;
-}
-@keyframes rotate { to { transform: rotate(360deg); } }
+/* Business demo selector */
+body.section-imagine-your-business.main-content main.business-selector{display:flex;flex-direction:column;align-items:center;margin-top:-2%;margin-bottom:6%;gap:clamp(12px,3vw,24px)}
+body.section-imagine-your-business.main-content main.business-selector h2{font-size:clamp(1.8rem,5vw,3.5rem);text-align:center;margin-bottom:clamp(20px,5vw,40px);text-shadow:var(--shadow)}
+body.section-imagine-your-business.main-content main.business-selector .business-cards{display:flex;gap:clamp(16px,4vw,32px);flex-wrap:wrap;padding:clamp(0,-4vw,-24px) 5% 3vw 5%;align-items:flex-start;justify-content:center}
+body.section-imagine-your-business.main-content main.business-selector .business-card{display:flex;flex-direction:column;width:minmax(160px,300px);max-width:300px;background:var(--card-bg);border-radius:24px;padding:clamp(18px,5vw,32px);cursor:pointer;border:1px solid rgba(99,102,241,.08);gap:12px;transition:background .3s cubic-bezier(.25,.8,.25,1),border-color .3s ease,transform .3s cubic-bezier(.25,.8,.25,1)}
+body.section-imagine-your-business.main-content main.business-selector .business-card:is(:hover,:focus-within){background:rgba(99,102,241,.1);border-color:var(--accent)}
+body.section-imagine-your-business.main-content main.business-selector .business-card h3{font-size:clamp(.85rem,2.5vw,.9rem);color:#fff;font-weight:500}
+body.section-imagine-your-business.main-content main.business-toggle-active .business-card.is-active{background:linear-gradient(185deg,#6366f1.2,rgba(255,255,255,.04));border-color:var(--accent)}
 
-/* Features cards */
-.features { padding: 100px 20px; display: flex; gap: clamp(20px, 6vw, 40px); flex-wrap: wrap; justify-content: center; }
-.feature-card {
-  background: rgba(30, 40, 95, 0.15);
-  backdrop-filter: blur(30px);
-  border-radius: 24px;
-  padding: clamp(30px, 8vw, 60px);
-  min-width: calc(33% - 20px);
-  max-width: 300px;
-  transition: all 0.4s ease;
-}
-.feature-card:hover { background: rgba(30, 40, 95, 0.25); transform: translateY(-8px); }
-.feature-title { font-size: 1.8rem; margin-bottom: 15px; color: #a855f7; }
-.feature-desc { font-size: 1rem; opacity: 0.8; line-height: 1.6; }
+/* Site demo showcase */
+body.showcase-interactive-site-elements.main-content main.site-showcase{padding-top:8%;display:flex;flex-direction:column;align-items:center}
+body.showcase-interactive-site-elements.main-content main.site-showcase h2{font-size:clamp(1.8rem,5vw,3.8rem);text-align:center;margin-bottom:40px;text-shadow:var(--shadow)}
+body.showcase-interactive-site-elements.main-content main.site-showcase .demo-booker-widget{display:flex;flex-direction:column;width:minmax(160px,720px);margin-bottom:clamp(48px,-4vw,72px);gap:clamp(12px,3.5vw,28px)}
+body.showcase-interactive-site-elements.main-content main.site-showcase .demo-booker-widget h3{font-size:clamp(1.1rem,3vw,1.4rem);text-align:center;font-weight:600;letter-spacing:.05em}
+body.showcase-interactive-site-elements.main-content main.site-showcase .demo-booker-interface{display:flex;flex-direction:column;border-radius:28px;border:1px solid rgba(99,102,241,.1);background:#0f0f23;padding:clamp(28px,6vw,56px);gap:clamp(18px,5vw,40px)}
+body.showcase-interactive-site-elements.main-content main.site-showcase .demo-booker-interface h4{font-size:clamp(1rem,2.5vw,1.1rem);opacity:.7;margin-bottom:calc(min(3.5vw,16px),8px)}
+body.showcase-interactive-site-elements.main-content main.site-showcase .demo-booker-interface p{font-size:clamp(.9rem,2.4vw,.95rem);opacity:.7}
+@keyframes shake{0%,100%{transform:translateX(0);} 25%{transform:translateX(-3px);} 75%{transform:translateX(3px)}}
 
-/* Particles */
-.particles { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 100; }
-.particle { position: absolute; border-radius: 50%; background: rgba(98, 77, 254, 0.6); filter: blur(4px); width: 60px; height: 60px; animation: float 8s ease-in-out infinite both; }
-@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-60px); } }
+/* Services overview */
+body.main-content main.services-overview{padding:calc(min(8vw,64px),clamp(10%,60px)) calc(3.5vw,32px);color:#fff;display:flex;flex-direction:column;gap:min(.9rem,var(--gap-size,.9rem));text-align:center}
+body.main-content main.services-overview .services-grid{display:flex;justify-content:center;padding:clamp(18px,4.5vw,24px) 0;gap:clamp(var(--gap-size),28px)}
+body.main-content main.services-overview .service-row-col h3{font-size:clamp(1.4rem,3.6vw,2.5rem);margin-bottom:min(.7rem,var(--gap-size))}
+body.main-content main.services-overview .service-row-col p{font-size:clamp(.9rem,2.3vw,.95rem);opacity:.8;color:#c8cad0;line-height:1.5}
+
+/* Contact section */
+body.section-cta-section.main-content footer.contact-cta-footer h2.cta-headline{font-size:clamp(2rem,6vw,4rem);margin-bottom:min(.65rem,var(--gap-size));text-align:center;text-shadow:var(--shadow)}
+body.section-cta-section.main-content footer.contact-cta-footer p.cta-subhead{font-size:clamp(.85rem,2.2vw,.9rem);max-width:340px;opacity:.7;margin-bottom:min(max(5vh,65px),calc(min(var(--gap-size),80px) + 1em));text-align:center}
+body.section-cta-section.main-content footer.contact-cta-footer .contact-methods{display:flex;align-items:center;border-top:1px solid rgba(99,102,241,.1);padding:clamp(var(--gap-size),38px) 0;justify-content:center;font-size:.85rem;opacity:.7}
+body.scroll-enabled main.transition-to-services{display:none}
+
+/* Animations */
+@keyframes orbFloat{0%{transform:translateY(20vh);} 50%{transform:translateY(-40vh);} 100%{transform:translateY(20vh);}}
 </style>
-<body>
-<main>
-<section class="hero"><div class="orb1" id="orb1"></div><div class="orb2" id="orb2"></div>
-<h1 class="hero-title">YEMENTIO<br><span style="font-size:clamp(1.5rem,5vw,3rem);display:block;color:#a855f7;margin-top:20px;">Premium Cloud Infrastructure</span></h1>
+<body class="main-content">
+
+<!-- Navigation -->
+<nav class="navbar" aria-label="Main navigation">
+<div class="nav-flex">
+<a href="#" class="logo" tabindex="-1">YEMENTI</a>
+<div class="nav-links">
+<a href="#hero" class="nav-link" data-target="hero" aria-label="Home">WORK</a>
+<a href="#services" class="nav-link" data-target="services" aria-label="Services">SERVICES</a>
+<a href="#demo-sites" class="nav-link" data-target="demo-sites" aria-label="Demo sites">DEMO SITES</a>
+<a href="#contact" class="nav-link" data-target="contact" aria-label="Contact us">CONTACT</a>
+</div>
+<!-- Hidden portal access -->
+<div style="display:none" id="legacy-portal-access"></div>
+</div>
+</nav>
+
+<main tabindex="-1">
+
+<!-- Opening Hero Experience -->
+<section class="hero-section" id="hero" aria-label="Homepage introduction — Yementi, the digital system coming online" role="banner">
+<div class="hero-background">
+<div class="hero-orb orb-1" style="top:5%;left:-10%;width:85vh;height:85vh;animation-delay:.2s"></div>
+<div class="hero-orb orb-2" style="bottom:-10%;right:-10%;width:95vh;height:95vh;animation-delay:-.75s;background:radial-gradient(circle,rgba(99,102,241,.3),transparent)"></div>
+</div>
+<h1 class="hero-title">WE BUILD DIGITAL<br><span style="color:#a855f7;text-shadow:var(--shadow)">EXPERIENCES</span></h1>
+<p class="hero-subtitle" hidden>No more websites — craft something entirely different.</p>
 </section>
 
-<section class="features" id="features">
-<article class="feature-card">
-<h2 class="feature-title">Enterprise Grade Performance</h2>
-<p class="feature-desc">Built on world-class data centers with 99.9% uptime guarantee and enterprise-level security.</p>
+<!-- The transformation zone → scroll triggers reveal -->
+<main tabindex="-1" id="scroll-triggered-content" class="body-scroll-enabled">
+
+<section class="transition-all-section transition-to-services">
+<h2 style="font-size:clamp(2.5rem,7vw,5rem);text-align:center;margin-bottom:min(.6em,var(--gap-size))">YOUR BUSINESS<br><span style="color:#a855f7;text-shadow:var(--shadow)">TRANSFORMS HERE</span></h2>
+<p style="font-size:clamp(1rem,3vw,1.1rem);max-width:420px;opacity:.7;margin-top:min(.6em,var(--gap-size))">Choose a fictional business type — watch what it could become.</p>
+</section>
+
+<section class="transition-all-section section-imagine-your-business">
+<main tabindex="-1" aria-label="Experience the future of your business online">
+<h2>IMAGINE YOUR BUSINESS<br><span style="color:#a855f7;text-shadow:var(--shadow)">HERE — TODAY</span></h2>
+<div class="business-cards">
+<button class="business-card is-active business-1" aria-pressed="true" tabindex="-1">
+<h3>CRAFT &amp; CUTS — Barber Shop</h3>
+</button>
+<button class="business-card business-2" aria-pressed="false" tabindex="-1">
+<h3>CHIC BLOWS — Salon</h3>
+</button>
+<button class="business-card business-3" aria-pressed="false" tabindex="-1">
+<h3>SILKS &amp; STEAK — Restaurant</h3>
+</button>
+<button class="business-card business-4" aria-pressed="false" tabindex="-1">
+<h3>BLESSED HAVEN — Church</h3>
+</button>
+<button class="business-card business-5" aria-pressed="false" tabindex="-1">
+<h3>MERCATOR CONTRACTING — Home Builder</h3>
+</button>
+<button class="business-card business-6" aria-pressed="false" tabindex="-1">
+<h3>FAMILY PET GROOMERS — Dog Spa</h3>
+</button>
+</div>
+</main>
+</section>
+
+<!-- Services Overview -->
+<section class="transition-all-section services-overview" id="services" aria-label="Services" role="region">
+<main tabindex="-1"><h2>CRAFTING THE DIGITAL FUTURE<br><span style="color:#a855f7;text-shadow:var(--shadow)">FOR YOUR BUSINESS</span></h2>
+<p style="font-size:clamp(1rem,3vw,1.05rem);margin-top:min(.6em,var(--gap-size));opacity:.7">We don't build websites — we craft digital experiences<br>that bring your business to life.</p>
+
+<div class="services-grid">
+<article class="service-row-col" aria-label="Custom Web Design">
+<h3>CUSTOM WEB DESIGN</h3>
+<p>Websites crafted for impact that showcase what a premium brand can achieve. No templates — only unique experiences built from the ground up.</p>
 </article>
 
-<article class="feature-card">
-<h2 class="feature-title">Global CDN Network</h2>
-<p class="feature-desc">Content delivery across 200+ cities worldwide with sub-50ms response times everywhere.</p>
+<article class="service-row-col" aria-label="Digital Strategy Consulting">
+<h3>DIGITAL STRATEGY</h3>
+<p>Data-driven decisions and conversion-focused design principles to amplify impact and maximize customer engagement.</p>
 </article>
 
-<article class="feature-card">
-<h2 class="feature-title">DDoS Protection</h2>
-<p class="feature-desc">Advanced threat detection and mitigation systems keeping your services always online.</p>
+<article class="service-row-col" aria-label="E-commerce Solutions">
+<h3>E-COMMERCE BUILD</h3>
+<p>Fully responsive commerce experiences with payment integrations, inventory tracking, and order management.</p>
 </article>
 
-<article class="feature-card">
-<h2 class="feature-title">NVMe Storage</h2>
-<p class="feature-desc">High-speed NVMe SSD storage with enterprise encryption for your critical data.</p>
+<article class="service-row-col" aria-label="Development & Maintenance">
+<h3>DEVELOPMENT + MAINTENANCE</h3>
+<p>We handle the technical — from hosting to security updates to performance optimization so you can focus on your business.</p>
+</article>
+</div>
+
+<article class="service-row-col" aria-label="SEO & Content Strategy">
+<h3>SEO + CONTENT STRATEGY</h3>
+<p>Data-informed keyword research and compelling content that ranks, engages your audience, and drives growth.</p>
 </article>
 
-<article class="feature-card">
-<h2 class="feature-title">24/7 Expert Support</h2>
-<p class="feature-desc">Round-the-clock support from our dedicated team of cloud infrastructure specialists.</p>
+(article class="service-row-col" aria-label="Branding & Identity Design">
+<h3>BRANDING & IDENTITY</h3>
+<p>Logos, color systems, typography treatment packages — complete visual identity for startups or rebrands that stand apart.</p>
 </article>
 
-<article class="feature-card">
-<h2 class="feature-title">Auto Scaling</h2>
-<p class="feature-desc">Automatically adjust resources with your traffic to optimize costs and performance.</p>
+</main>
+</section>
+
+<!-- Interactive demo booking zone -->
+<section class="transition-all-section" id="demo-sites">
+<main tabindex="-1" aria-label="Interactive site demonstrations">
+<h2 style="font-size:clamp(2rem,5.5vw,3.8rem);text-align:center;margin-bottom:min(.6em,var(--gap-size))">WATCH YOUR BUSINESS<br><span style="color:#a855f7;text-shadow:var(--shadow)">ACTIVELY TRANSFORM</span></h2>
+
+<div class="demo-booker-widget">
+<h3>CRAFT &amp; CUTS BOOKING EXAMPLE</h3>
+<div class="demo-booker-interface">
+<h4>BOOK SERVICES ONLINE</h4>
+<p>A fully interactive booking system with service selection, pricing display,</p>
+<p>real-time calendar visibility and payment processing integration.</p>
+</div>
+</div>
+
+<article class="service-row-col" hidden><h3>YOUR BOOKING INTERFACE</h3></article>
+
+<p style="width:100%;text-align:center;padding:min(8vw,64px) 0;font-size:.9rem;opacity:.7;margin:-calc(min(var(--gap-size),28px)) 0 min(3.5vw,24px)">This is the booking interface you get — responsive, fast, conversion-optimized.</p>
+
+</main>
+</section>
+
+<!-- Services showcase transition -->
+<section class="transition-all-section" aria-label="Service showcase">
+<main tabindex="-1">
+<h2 style="font-size:clamp(2rem,5vw,3.8rem);text-align:center;margin-bottom:min(.6em,var(--gap-size))">FROM CONCEPT<br><span style="color:#a855f7;text-shadow:var(--shadow)">TO COMPLETION</span></h2>
+<p aria-hidden="true" style="font-size:clamp(1rem,3vw,1.05rem);opacity:.7;max-width:450px;padding:min(.6em,var(--gap-size)) auto;text-align:center">Every Yementi-built digital experience ships faster — without sacrificing quality.</p>
+
+<article class="service-row-col" aria-label="Rapid Delivery">
+<h3>RAPID DELIVERY</h3>
+<p>Our streamlined workflow ensures your site launches promptly, letting you focus on revenue-generating activities.</p>
+</article>
+
+<article class="service-row-col" aria-label="Mobile-First Design">
+<h3>MOBILE-FIRST DESIGN</h3>
+<p>Every pixel works beautifully across mobile, tablet, and desktop — optimized for every device your customers use.</p>
 </article>
 </section>
-</main></body>
+
+<!-- Final CTA section -->
+<section class="transition-all-section" id="contact" aria-label="Contact us">
+<footer class="contact-cta-footer">
+<main tabindex="-1"><h2 class="cta-headline">YOUR BUSINESS DOESN'T NEED<br><span style="color:#a855f7;text-shadow:var(--shadow)">ANOTHER WEBSITE</span></h2>
+<p class="cta-subhead">IT NEEDS AN EXPERIENCE.<br>Let's build something memorable.</p>
+
+<article class="service-row-col" aria-label="Get Started CTA">
+<h3 style="font-size:clamp(1.5rem,4vw,2.2rem);margin-bottom:min(.6em,var(--gap-size));color:#a855f7;text-shadow:var(--shadow)">LET'S BUILD<br>SOMETHING IMPRESSIVE</h3>
+<p style="font-size:clamp(.9rem,2.3vw,.95rem);line-height:1.5">Get in touch for a consultation about building your next digital experience.</p>
+</article>
+
+<div class="contact-methods">
+<p>Email hello@yementi.io | Let's talk shop</p>
+
+</div></main>
+</footer>
+</section>
+
+<!-- Hidden: Legacy portal access hook -->
+<main tabindex="-1" id="hidden-portal-access"></main>
+
+</body>
 </html>
