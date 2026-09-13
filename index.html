@@ -1,164 +1,27 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yementi.io - Futuristic Web Solutions</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: system-ui, sans-serif;
-            overflow-x: hidden;
-        }
-
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 3rem;
-            background: linear-gradient(135deg, #0a0a0f 0%, #0f0f16 50%, #1a1a2e 100%);
-            color: #fff;
-        }
-
-        .hero h1 {
-            font-size: clamp(3rem, 8vw, 5rem);
-            line-height: 0.9;
-            margin-bottom: 2rem;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .hero span {
-            display: inline-block;
-            background: linear-gradient(90deg, #6366f1 0%, #a855f7 40%, #ec4899 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 20px rgba(99, 102, 241, .5));
-        }
-
-        .hero p {
-            font-size: clamp(1.1rem, 3vw, 1.6rem);
-            max-width: 600px;
-            text-align: center;
-            margin-bottom: 2rem;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            padding: 3rem 2rem;
-            max-width: 1200px;
-            margin: -4rem auto 8rem;
-            background: radial-gradient(circle, #1e1e2f 0%, transparent 70%);
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 2rem;
-            text-align: center;
-            transform: translateY(20px);
-            opacity: 0;
-            transition: all .4s cubic-bezier(.17, .67, .83, .67);
-        }
-
-        .card:hover {
-            transform: translateY(-8px) scale(1.02);
-            border-color: rgba(99, 102, 241, .5);
-            box-shadow: 0 20px 40px rgba(99, 102, 241, .15);
-        }
-
-        .card h3 {
-            font-size: 1.4rem;
-            margin-bottom: .7rem;
-            background: linear-gradient(90deg, #fff, #ccc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 3rem;
-            color: #888;
-            font-size: .9rem;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        @keyframes fadeUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .fade-in { animation: fadeUp .8s cubic-bezier(.17, .67, .83, .67) forwards; }
-        .slide-right { animation-delay: .15s; }
-        .slide-left { animation-delay: .3s; }
-    </style>
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Yementi.io - Where Tomorrow Begins Today</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:"Poppins",sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;color:white;display:flex;flex-direction:column;align-items:center;overflow-x:hidden}
+.glowtext{background:linear-gradient(90deg, #ff6b6b,#feca57,#48dbfb,#ff9ff3,-webkit-linear-gradient(90deg, #ff6b6b,#feca57,#48dbfb,#ff9ff3));-webkit-background-clip:text;background-clip:text;webkit-text-fill-color:transparent;font-size:3.5rem;animation:pulse 3s ease-in-out infinite;margin:20px 0}
+@keyframes pulse{0%{transform:scale(1);text-shadow:0 0 20px rgba(255,107,107,.4)}30%{transform:scale(1.02),text-shadow:0 0 30px rgba(255,107,107,.6)}100%{transform:scale(1);text-shadow:0 0 20px rgba(255,107,107,.4)}}
+.tabs{position:fixed;right:-80px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;background:rgba(255,255,255,.1);border-radius:.5rem;padding:2rem;border:1px solid rgba(255,255,255,.2);width:180px;z-index:999;transition:.3s}
+.tab{padding:1.2rem 1.5rem;margin-bottom:.5rem;width:auto;display:flex;align-items:center;font-size:1.1rem;font-weight:600;cursor:pointer;border:1px solid transparent;color:white;background:rgba(255,255,255,.1);border-radius:.5rem;position:relative}
+.tab::before{content:"";position:absolute;left:-8px;top:50%;transform:translate(-50%,-50%) scaleX(0);width:36px;height:36px;background:white;border-radius:50%;transition:.4s;will-change:left,transform}
+.tab::after{content:"";position:absolute;left:-7px;top:82%;transform:scale(0) rotate(-135deg);width:36px;height:36px;background:white;border-radius:50%;transition:.5s;will-change:transform,opacity}
+.tab:hover,.tab:active{background:hsla(149,76%,62%,.2)}
+.tab:hover::before{left:calc(-8px + 2rem);width:calc(36px - 2rem);height:36px;transform:translate(-50%,-50%) scaleX(1)}
+.tab:hover::after{transform:rotate(0) scale(1);opacity:1;left:.8rem;transition:.4s}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.11.4/dist/gsap.min.js"></script><script>window.addEventListener("load",()=>{gsap.from(".glowtext",{duration:.8,yoyo:true,repeat:-1})});</script></head>
 <body>
-    <div class="hero">
-        <h1 class="fade-in slide-right" aria-label="Welcome headline">
-            <span>Welcome to</span><br>Yementi.io
-        </h1>
-        <p>Building the web of tomorrow. Modern, responsive, and performance-obsessed websites that scale with your vision.</p>
-        
-        <div style="margin-top: 2rem; display: flex; justify-content: center">
-            <a href="#services" 
-               style="background: linear-gradient(90deg, #6366f1, #8b5cf6); color: #fff; padding: .8rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem; display: inline-flex; align-items: center; gap: .5rem; transition: all .3s; border: none;">
-                Explore Our Services
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                    <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2"/>
-                </svg>
-            </a>
-        </div>
-    </div>
-
-    <div class="cards" id="services">
-        <div class="card fade-in slide-right">
-            <h3>Web Development</h3>
-            <p style="color: #888; font-size: .9rem;">
-                Custom websites built with modern technologies that deliver speed, security, and scalability.
-            </p>
-        </div>
-
-        <div class="card fade-in slide-left">
-            <h3>Brand Design</h3>
-            <p style="color: #888; font-size: .9rem;">
-                Premium visual identity systems crafted for tech-forward companies ready to lead markets.
-            </p>
-        </div>
-
-        <div class="card fade-in slide-right">
-            <h3>Future Strategy</h3>
-            <p style="color: #888; font-size: .9rem;">
-                Innovation consulting that positions your brand at the cutting edge of web evolution.
-            </p>
-        </div>
-    </div>
-
-    <footer class="footer">
-        <p>&copy; 2026 Yementi.io. All rights reserved.</p>
-        <a href="#contact" style="color: #8b5cf6; text-decoration: none;">Get in touch</a>
-    </footer>
-
-    <script>
-        // Stagger scroll animations
-        document.querySelectorAll('.card').forEach((card, index) => {
-            setTimeout(() => card.classList.add('fade-in'), 200 + Math.random() * 300);
-        });
-        
-        console.log('Yementi.io loading: futuristic homepage ready');
-    </script>
-</body>
-</html>
+<div class="tab" data-target="#home"><span>Home</span></div>
+<div class="tab"data-target="#about"><span>About</span></div>
+<div class="tab"data-target="#contact"><span>Contact</span></div>
+<main id="home"><h1 class="glowtext">FUTURE IS NOW</h1><p style="font-size:(2rem;max-width:600px;text-align:center;margin:20px 0;">Yementi.io - Where Tomorrow Begins Today</p><div style="margin-top:40px;font-size:3.5rem;">🚀 💻 ✨</div></main>
+<div id="about" style="display:none;max-width:800px;margin-bottom:20px;">This is a futuristic website with smooth scroll animations and glassmorphism effects built with modern CSS.</div><div id="contact"style="display:none"><a href="mailto:hello@yementi.io" style="font-size:1.5rem;text-decoration:none;color:white;">hello@yementi.io</a></div>
+<script>window.addEventListener("load",()=>{const tabs=document.querySelectorAll(".tab");tabs.forEach(t=>t.onclick=()=>{document.querySelectorAll("main,#home").innerHTML="#contact")}{const targets=document.querySelectorAll(".about","#about")[0],(contacts="#contact"),id);target.style.display=t.dataset.target===targetId?"block":"none";});</script>
