@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<<<<<<< HEAD
 <title>Yementi.io — Build Digital Experiences</title>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -226,5 +227,155 @@ body.scroll-enabled main.transition-to-services{display:none}
 <!-- Hidden: Legacy portal access hook -->
 <main tabindex="-1" id="hidden-portal-access"></main>
 
+=======
+<title>YEMENTI.IO — Premium Portfolio Site</title>
+<style>
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    :root{--bg:#050510;--text:#e8e9f0;--accent:#6366f1}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:black;color:var(--text);font-family:'Rajdhani',sans-serif;min-height:100vh;display:flex;flex-direction:column}
+    nav{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;padding:24px 6%;backgroundrgba(5,5,16,.8);backdrop-filter:blur(24px)}
+    .nav-links{display:flex;gap:clamp(var(--gap),24px);margin-left:auto}
+    nav a{text-decoration:none;color:hsla(217,90%,95%,.8);transition:border-color .2s ease}
+    nav a:hover{border-bottom-color:var(--accent)}
+    main{min-height:calc(100vh - 70px);padding-top:8%}
+    .hero{text-align:center;padding:clamp(var(--gap),48%) 5%;background:linear-gradient(185deg,#02020a,transparent)}
+    h1{font-size:clamp(3rem,9vw,6rem);line-height:.9;margin-bottom:24px;color:#fff;letter-spacing:-.02em}
+    .subtitle{opacity:.7;font-size:clamp(.9rem,2.5vw,1rem)}
+    .demo-selector{display:flex;gap:clamp(var(--gap),32px);flex-wrap:wrap;padding:clamp(48px,-6%,72px) var(--padding) align-items:flex-start justify-content:center}
+    .card{minmax(160px,320px);backgroundrgba(99,102,241,.04);border-radius:24px;padding:clamp(var(--gap),5vw,48px);cursor:pointer;border:1px solid rgba(255,255,255,.08)}
+    .card.active{backgroundrgba(99,102,241,.15)}
+    .card:hover h3{color:#fff}
+    .card:is(:hover,:focus-within) {border-color:var(--accent)}
+    .card h3{font-size:clamp(.9rem,2.5vw,1rem);color:#c8cad0;font-weight:500;transition:text-shadow .3s ease}
+</style>
+</head>
+<body>
+
+<nav>
+<a style="margin-right:auto;text-decoration:none;color:#fff" href="#hero">YEMENTI.IO</a>
+<div class="nav-links">
+<a href="#demo-sites">DEMO SITES</a>
+<a href="#services">SERVICES</a>
+<a href="#contact">CONTACT</a>
+</div>
+</nav>
+
+<main id="content" tabindex="-1">
+
+<section class="hero" id="hero" aria-label="Welcome to Yeventi">
+<h1 id="site-title"></h2>
+<p class="subtitle" id="site-subtitle"></p>
+</section>
+
+<aside class="demo-selector" style="margin-bottom:calc(-1 * var(--gap))" aria-label="Select a business type">
+<button class="card active" data-business="barber" tabindex="-1">
+<h3>Barber Shop Site</h3>
+<p style="font-size:.75rem;opacity:.6;margin:-.3em 0 .6em">Classic cuts, gold accents</p>
+</button>
+<button class="card" data-business="restaurant" tabindex="-1">
+<h3>Restaurant Site</h3>
+<p style="font-size:.75rem;opacity:.6-margin">Dining experience with gallery</p>
+</button>
+<button class="card" data-business="salon" tabindex="-1">
+<h3>Salon & Stylist Site</h3>
+<p style="font-size:.75rem;opacity:.6;margin:-.3em 0 .6em">Hair portfolio showcase</p>
+</button>
+<button class="card" data-business="church" tabindex="-1">
+<h3>Church Community Site</h3>
+<p style="font-size:.75rem;opacity:.6;margin:-.3em 0 .6em">Events, giving, programs</p>
+</button>
+<button class="card" data-business="contractor" tabindex="-1">
+<h3>Contracting Portfolio</h3>
+<p style="font-size:.75rem;opacity:.6-margin">Kitchen renovations gallery</p>
+</button>
+<button class="card" data-business="groomer" tabindex="-1">
+<h3>Pet Grooming Site</h3>
+<p style="font-size:.75rem;opacity:.6;margin:-.3em 0 .6em">Happy clients, mobile booking</p>
+</button>
+</aside>
+
+<section id="site-showcase" style="padding:calc(2 * var(--gap)) 0;width:100%" tabindex="-1" aria-label="Business site showcase">
+<main>
+<h2 style="font-size:clamp(2rem,6vw,3.5rem);text-align:center;margin-bottom:48px;text-shadow:0 8px 60px rgba(99,102,241,.2)"></h2>
+<div id="demo-content">
+</div>
+<p style="width:100%;text-align:center;padding:var(--gap) 0;font-size:.9rem;">Select a business type above to see what your site could look like.</p>
+</main>
+</section>
+
+<section class="hero" id="services" aria-label="Our Services">
+<h2></h2>
+<p><span style="color:#a855f7;text-shadow:0 8px 60px rgba(99,102,241,.3)">FOR LOCAL BUSINESSES</span></p>
+</section>
+
+<section style="padding:calc(4 * var(--gap)) 5%;max-width:1000px;margin:auto" aria-label="Service details">
+<div id="service-list">
+<div class="service-item"></div>
+<div class="service-item"></div>
+<div class="service-item"></div>
+</div>
+</section>
+
+<footer style="padding:48 5%;border-top:1px solid rgba(255,255,255,.08);text-align:center;font-size:.9rem;color:#6b7280;background:linear-gradient(180deg,rgba(99,102,241,.03),transparent)" aria-label="Footer">
+<main>
+<h3 style="font-size:clamp(1.5rem,4vw,2.2rem);margin-bottom:.6em;color:#a855f7;text-shadow:0 8px 60px rgba(236,72,153,.2)">LET'S BUILD SOMETHING</h3>
+<p style="font-size:.9rem;opacity:.8">hello@yementi.io | Let's build your premium business site.</p>
+</main>
+</footer>
+
+<script style="display:none">//<![CDATA[
+document.addEventListener('DOMContentLoaded', () => {
+    const showcase = document.getElementById('demo-content');
+    const cards = document.querySelectorAll('.card');
+    const title = document.getElementById('site-title');
+    const subtitle = document.getElementById('site-subtitle');
+    const h2 = document.querySelector('#services h2');
+    
+    const templates = {
+        barber: {name:'CRISP & KNIFE', bg:'#1a150f', heroText:'PRECISION GROOMING SINCE 1987', subtext:'Welcome to Crisp & Knife — where classic barbering meets modern comfort.', cta:'BOOK YOUR APPOINTMENT', footer:'© 2024 Crisp & Knife. All rights reserved.'},
+        restaurant: {name:'SILKS & STEAK', bg:'#2a0f0f', heroText:'FINE DINING BY THE RIVER', subtext:'Savor locally-sourced proteins and seasonal vegetables in an intimate riverside dining room.', cta:'VIEW OUR MENU', footer:'© 2024 Silks & Steak. All rights reserved.'},
+        salon: {name:'LUMIÈRE BLONDE', bg:'#151210', heroText:'LUXURY HAIR DESIGN STUDIO', subtext:'Transform your hair journey at Lumière Blonde — a gold-standard studio specializing in blonde expertise.', cta:'APPOINTMENT REQUEST', footer:'© 2024 Lumière Blonde. All rights reserved.'},
+        church: {name:'TRINITY COMMUNITY', bg:'#0e141a', heroText:'WELLNESS & WORSHIP FOR ALL', subtext:'A welcoming congregation for the community. Join us as we gather to serve in person or through our virtual broadcast.', cta:'GIVE ONLINE', footer:'© 2024 Trinity Community Church. All rights reserved.'},
+        contractor: {name:'MERCATOR CONTRACTING', bg:'#1a160f', heroText:'HOME RENOVATIONS & KITCHENS', subtext='Built on over 25 years of craftsmanship, our residential team transforms dream spaces into living realities.', cta:'REQUEST FREE ESTIMATE', footer:'© 2024 Mercator Contracting. All rights reserved.'},
+        groomer: {name:'PAW PAWN', bg:'#0f140d', heroText:'PROMPT & HAPPY PET GROOMING', subtext='We transform stressed-out pets into spa-relaxed fur-babies with mobile grooming service.', cta:'BOOK YOUR PUPPY', footer:'© 2024 Paw Pawn Grooming. All rights reserved.'},
+    };
+
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            cards.forEach(c => c.classList.remove('active'));
+            card.classList.add('active');
+            const biz = templates[card.dataset.business];
+            showcase.innerHTML = `
+                <style>.business-bg{background:linear-gradient(135deg,var(--bg),#000)!important}</style>
+                <div class="demo-nav"><span style="font-weight:700;font-size:1.1rem">${biz.name}</span></div>
+                <div class="demo-hero" style="${biz.bg};padding:80px 40px;text-align:center;color:#fff">
+                    <h2 style="font-size:clamp(2rem,5vw,3rem);margin-bottom:16px">${biz.heroText}</h2>
+                    <p style="opacity:.9;font-size:1rem;max-width:500px;margin:0 auto;line-height:1.6">${biz.subtext}</p>
+                    <a href="#contact" class="cta-button" style="margin-top:24px;padding:14px 32px;border-radius:8px;background:var(--accent);color:#fff;font-weight:600;text-decoration:none;transition:transform .3s ease">${biz.cta}</a>
+                </div>
+                <div class="demo-gallery" style="padding:60px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+                    ${['Gallery Item 1','Before & After','Portfolio Item','Service Menu','Happy Clients','Contact Info'].map(g => `<div class="demo-gallery-item" style="aspect-ratio:4/3;backgroundrgba(99,102,241,.08);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:.8rem;color:#6b7280;border:1px solid rgba(255,255,255,0.05)"></div>`).join('')}
+                </div>
+                <footer class="demo-footer" style="text-align:center;padding:24px;border-top:1px solid rgba(255,255,255,0.05);font-size:.8rem;color:#6b7280;font-family:'Inter">${biz.footer}</footer>
+            `;
+            
+            h2.textContent = 'THIS IS WHAT YOUR SITE CAN LOOK LIKE';
+        });
+        
+        card.addEventListener('mouseenter', () => {
+            title.style.opacity = .5;
+            subtitle.style.opacity = .3;
+        });
+        card.addEventListener('mouseleave', () => {
+            title.style.opacity = 1;
+            subtitle.style.opacity = .7;
+        });
+    });
+
+    cards[0].click();
+});
+]]></script>
+>>>>>>> dc3ba5e (Update index.html — premium portfolio site for local businesses)
 </body>
 </html>
