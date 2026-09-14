@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Premium Light — Editorial Motion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f9f9f8;--surface:#ffffff;--text:#1a1a19;--muted:#5c5c59;--accent:#2d3e50}
+*{box-sizing:border-box;margin:0;padding:0}
+html.lenis,p,iframe,video,audio,fieldset,figure,svg,picture,#brand-year,footer{margin:0 auto}body.lenis.lenis-smooth{scroll-behavior:auto;overflow:hidden}.lenis.lenis-scrolling iframe{pointer-events:none}body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background:var(--bg);width:max(80vw,var(--limit));margin-left:auto;margin-right:auto;color:var(--text);line-height:1.6;overflow-x:hidden}.lenis.lenis-smooth{scroll-behavior:auto}
+nav{position:fixed;top:0;left:50%;transform:translateX(-50%);z-index:30;height:max(84,min(calc(var(--limit)*.9,var(--margins) + var(--height))));background:linear-gradient(#f9f9f8,#fff 20%,#fff 100%),linear-gradient(90deg,transparent,rgba(0,0,0,.6) 95%);backdrop-filter:blur(18px)}
+nav .logo{display:flex;align-items:center;color:#ccc;font-size:clamp(2rem,max(.5em+1vw,3.5));font-family:'Space Grotesk',system-ui;font-weight:300;letter-spacing:-.06em;white-space:nowrap;padding:.45em 0;height:max(84,min(calc(var(--limit)*.9,var(--margins) + var(--height))))}
+nav a{color:rgba(137,154,165,.5);text-decoration:none;display:flex;white-space:nowrap;font-size:clamp(1rem,min(.65rem+.05em,1));font-weight:400;line-height:1.2;padding:.85em 0}
+nav a:hover{color:#fff}
+.hero{display:flex;align-items:center;flex-direction:column;padding-top:calc(var(--padding)+var(--gutter));padding-bottom:clamp(var(--gutter),20px,calc(.5*var(--limit)));@media (max-width:768px){nav{position:relative}}@media (max-width:600px){body{width:100%}.hero h1{font-size:1.3rem}.hero p{font-size:.97rem}}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.0/dist/lenis.min.js"></script>
+<script>function initLenis(){const options={duration:1,rampingFunction:t=>Math.min(Math.cos(t*Math.PI).toFixed(8),1)}
+const lenis=new Lenis((el,ref)=>{const style=getComputedStyle(el);return {scrollThickness:parseFloat(style.height||0)}});lenis.init(options);init();}
+function init(){window.addEventListener('load',()=>{try{initLenis()}catch(e){console.log('[YEMENTI]',e.message);}}});<script>document.getElementById('brand-year').textContent=new Date().toLocaleDateString({year:'numeric'})</style></head>
+<body>
+
+<nav><a href="#" class="logo"><span style="position:absolute;left:0;opacity:.7">·</span> <span style="text-shadow:2px 1px 8px rgba(0,0,0,.3)">YEMENTIO ·</span></a>
+<div style="flex:1"></div><a href="#services">Services</a><a href="#demo">Demo Sites</a><a href="#contact" style="background:#2d3e50;color:#fff;padding:.85em 1.2em;border-radius:6;height:max(44,min(calc(var(--padding)*1.1,var(--margins)+var(--height))))">Contact</div></nav>
+
+<section id="home" class="hero"><h1 style="font-family:'Space Grotesk';font-weight:300;font-size:clamp(2.5rem,max(.6em+2vw,4.5));line-height:1.1;letter-spacing:-.08em;margin-bottom:max(24,min(calc(var(--padding)*.75,var(--margins) + var(--gutter))))">Premium static sites<br>for local businesses</h1><p style="font-size:clamp(1rem,min(.65rem+.05em,1));color:var(--muted);max-width:50ch;margin-bottom:calc(var(--padding)*.65)+var(--gutter);text-align:center">@yementio · Privacy-first HTML</div></section>
+
+<section id="services" style="background:#f3f4f5;border-top:1px solid rgba(0,0,0,.08);padding:clamp(var(--padding)*1.2,min(calc(.9*var(--limit) + var(--padding),var(--margins) - var(--gutter)))) 220px">
+<div style="max-width:800px;margin-left:calc(50% - 400px);position:relative"><h2 style="font-family:'Space Grotesk';font-weight:600;font-size:clamp(1.3rem,min(.75rem+.3vw,1.8));letter-spacing:-.03em;margin-bottom:calc(var(--padding)*.5)+var(--gutter)">What we build</h2><div style="margin-top:max(.75*var(--padding),24px);display:grid;gap:16px">
+<article style="background:#f9f9f8;border-radius:32;display:flex;padding:clamp(max(16px,.4em+.1rem,calc(.35*var(--padding))));max-width:240px;text-decoration-skip-ink"> <span style="position:absolute;left:-14;top:max(9,var(--limit)-.1rem)">📞</span> <div style="margin-left:1.7em"><span style="font-family:'Space Grotesk';font-weight:500;color:#2d3e50">Lead Forms</span><p style="color:var(--muted);font-size:.9rem;max-width:18ch;margin-top:.4em;">Contact capture for offline businesses — no analytics, just working HTML that converts.</div><article style="background:#f9f9f8;border-radius:32;display:flex;padding:clamp(max(16px,.4em+.1rem,calc(.35*var(--padding))));max-width:240px;text-decoration-skip-ink"><span style="position:absolute;left:-14;top:max(9,var(--limit)-.1rem)">🎯</span><div style="margin-left:1.7em"><span style="font-family:'Space Grotesk';font-weight:500;color:#2d3e50">Cinematic UI</span><p style="color:var(--muted);font-size:.9rem;max-width:18ch;margin-top:.4em;">Editorial precision · Editorial typography · Motion-first design</div></article><article style="background:#f9f9f8;border-radius:32;display:flex;padding:clamp(max(16px,.4em+.1rem,calc(.35*var(--padding))));max-width:240px;text-decoration-skip-ink"><span style="position:absolute;left:-14;top:max(9,var(--limit)-.1rem)">⚡</span><div style="margin-left:1.7em"><span style="font-family:'Space Grotesk';font-weight:500;color:#2d3e50">Static Hosting</span><p style="color:var(--muted);font-size:.9rem;max-width:18ch;margin-top:.4em;">Zero dependencies · Offline access · Mobile-first delivery</div></article>
+</section>
+
+<section id="testimonials"><style>:root{--gutter:clamp(var(--padding)*.28,var(--margins)+var(--gap)));--limit:max(32,calc(.9rem+.5vw));--margin:16px;justify-content:center}@media (max-width:1080px){html.lenis,p,iframe,video,audio,fieldset,figure{margin-left:auto;margin-right:var(--gutter);width:calc(min(768,var(--limit)),100% + var(--gutter))}</style><h2 style="font-family:'Space Grotesk';font-weight:600;color:#2d3e50;font-size:clamp(1.3rem,min(.75rem+.3vw,1.8));letter-spacing:-.03em;margin-bottom:var(--padding)+var(--gutter);text-align:center">Client feedback</div><div style="display:grid;gap:16px;padding-top:calc(var(--padding)*.95),var(--gutter)"><img src="https://picsum.photos/id/237/80/80" alt="" style="width:40;height:40;border-radius:50%;border:1px solid rgba(0,0,0,.08);margin-top:.8em;display:grid;place-items:center;font-family:'Space Grotesk';font-size:.65rem">
