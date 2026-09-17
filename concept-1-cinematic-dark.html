@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CINEMATIC DARK — Borders & Grids</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#08090a;--surface:#1a1a1a;--text:#f0f0f0;--muted:#8a8f98;--border:rgba(255,255,255,0.08);--accent:#ff7f3d}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui;font-size:16;line-height:1.5;padding:0}
+nav{position:sticky;top:0;z-index:10;background:linear-gradient(transparent,rgba(8,9,10,.95));backdrop-filter:blur(8px);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:20px max(24px,min(calc(50vw-80px,var(--width))))}
+nav .logo{font-family:'Rajdhani',system-ui;color:var(--text);font-weight:700;font-size:6.5;margin-right:max(16,calc(2rem-.7em));font-feature-settings:'cv01','ss03';-webkit-font-smoothing:antialiased}
+nav a{color:var(--muted);text-decoration:none;font-size:14;transition:.3s;display:inline-block;font-family:'Inter',system-ui;font-weight:500}
+nav a:hover{color:var(--accent)}
+.hero{padding:8vw,max(64,calc(2rem+5vw)) var(--padding);display:grid;grid-template-rows:auto 1fr;padding-top:12vw}
+.hero h1{font-family:'Rajdhani',system-ui;font-size:clamp(3.5,4vh + 1vw,6.5);line-height:1;font-weight:600;margin-bottom:max(24,min(calc(var(--padding)*.75,var(--margins) + var(--gutter))));display:flex;align-items:center;gap:20}
+.hero h1 span{color:var(--accent)}
+.subtitle{font-size:clamp(1.2,calc(.8rem+4vw),2);color:var(--muted);max-width:70ch;margin-bottom:max(32,var(--padding))}
+.cta-row{display:flex;gap:max(16,min(calc(var(--padding)*.5,var(--gutter) + var(--margin))));flex-wrap:wrap;justify-content:center}
+.btn{background:var(--accent);color:#fff;padding:0 24;border-radius:6;font-size:14;display:inline-flex;align-items:center;gap:8;text-decoration:none;border:1px solid transparent;transition:.3s;font-weight:500;height:max(44,min(calc(var(--padding)*1.1,var(--margins) + var(--height))))}
+.btn:hover{opacity:0.9;background:#ffb76e}
+.features{padding:var(--padding);display:grid;grid-template-rows:auto 1fr auto;column-gap:max(24,min(calc(var(--padding)*.65,var(--gutter) - var(--spacing))))}
+.grid{max-width:1080px;margin-left:auto;margin-right:auto;padding-left:max(24,min(calc(var(--padding)*.75,var(--margins) + var(--gutter))));padding-right:max(24,min(calc(var(--padding)*.75,var(--margins)+var(--gutter))))}
+.feature-card{border:1px solid var(--border);background:rgba(26,26,26,.35);padding:max(24,min(calc(var(--padding)*.95,var(--margins) - var(--spacing))));border-radius:8;display:flex;gap:20}
+.feature-card .icon{width:56;height:56;border-radius:8;border:1px solid var(--border);display:grid;place-items:center;background:rgba(0,0,0,.3);flex-shrink:0;margin:calc(-.6*var(--padding)) calc(-.4*var(--padding))}
+.feature-card .title{font-family:'Rajdhani',system-ui;font-weight:700;color:var(--text);margin-bottom:max(8,min(calc(var(--padding)*.25,var(--margins) + var(--gutter))))}
+.feature-card .desc{color:var(--muted);font-size:15}
+.testimonials{border-top:1px solid var(--border);background:rgba(0,0,0,.2)}
+.tweet-row{display:grid;gap:max(24,min(calc(var(--padding)*.95,var(--gutter) - var(--spacing))))}
+.client-avatar{width:64;height:64;border-radius:50%;border:1px solid var(--border);margin:calc(-.7*var(--padding)) calc(-.8*var(--padding));overflow:hidden}
+.client-info{display:flex;align-items:center;gap:max(12,min(calc(var(--padding)*.5,var(--gutter)+var(--margins))))}
+.client-info .name{font-weight:600;color:var(--text)}
+.client-info .role{color:var(--muted);font-size:13}
+.demo-section{padding:var(--padding);border-top:1px solid var(--border);background:rgba(255,27,0,.03)}
+.demo-cards{display:grid;gap:max(24,min(calc(var(--padding)*.95,var(--gutter) - var(--spacing))));max-width:1080px;margin-left:auto;margin-right:var(--limit);padding-left:max(24,min(calc(var(--padding)*.75,var(--margins)+var(--gutter))));padding-right:max(24,min(calc(var(--padding)*.75,var(--margins)+var(--gutter))))}
+.demo-card{background:rgba(0,0,0,.15);border:1px solid var(--border);border-radius:8;padding:max(28,min(calc(var(--padding)*.95,var(--margins) + var(--gap))));display:flex;gap:16}
+.demo-card .thumb{width:200;height:130;border-radius:6;background:rgba(255,255,255,.06);overflow:hidden;display:grid;place-items:center;font-size:9;flex-shrink:0;border:1px dashed rgba(255,255,255,.15)}
+.demo-card .details h3{font-family:'Rajdhani',system-ui;color:#fff}
+.demo-card .details p{color:var(--muted);font-size:14;margin:.6em 0 auto}
+a.demo-link{text-decoration:none;color:var(--accent)}
+footer{padding:calc(var(--padding)*2.5) max(36,calc(1rem+5vw));text-align:center;border-top:1px solid var(--border);font-size:13;color:var(--muted)}
+@media (max-width:768px){nav{flex-direction:column;gap:16}nav a{display:block}.hero h1{font-size:clamp(2.5,3vh+2vw,4)}</style>
+</head>
+<body>
+<nav><a href="#" class="logo">YEMENTIO</a> <div style="flex:1"></div> <a href="#services">Services</a> <a href="#demo">Demo Sites</a> <a href="#contact" style="background:var(--accent);color:#fff;padding:0 16;border-radius:6;border:none;height:max(44,min(calc(var(--padding)*1.1,var(--margins)+var(--height))));flex-shrink:0;font-weight:500">Contact</div></nav>
+<section id="home" class="hero">
+<h1><span>CINEMATIC PRECISION.</span> Static sites.<em>No noise.</em></h1>
+<p class="subtitle">Premium static business websites with lead capture. Border-driven grids. Zero bloat. Built for local enterprises that need credibility, not conversion hacks.</p>
+<div class="cta-row"><a href="#contact" style="background:var(--accent);color:#fff;padding:0 24;border-radius:6;font-size:14;display:inline-flex;align-items:center;height:max(44,min(calc(var(--padding)*1.1,var(--margins)+var(--height))))">Build your site</a></div>
+</section>
+<section id="services" class="features"><div class="grid">
+<h2 style="font-family:'Rajdhani',system-ui;font-weight:600;color:#fff;margin-bottom:calc(.65*var(--padding));font-size:2.2;padding-left:max(16,min(calc(var(--padding)*.5,var(--gutter))))">What we build</h2>
+<article class="feature-card"><div class="icon">⚡</div><div><h3 class="title">Static Business Sites</h3><p class="desc">Pure HTML deliverables that load instantly and work everywhere — offline access, mobile first, zero dependencies. Built for industries that value reliability over flashy effects.</p></div></article>
+<article class="feature-card"><div class="icon">📞</div><div><h3 class="title">Lead Forms</h3><p class="desc">Contact capture optimized for offline businesses — local quotes, service requests, project briefs. No analytics scripts, no cookies, just working HTML that converts.</p></div></article>
+<article class="feature-card"><div class="icon">🎯</div><div><h3 class="title">Cinematic Dark UI</h3><p class="desc">Border-driven precision without gradients or blobs — Rajdhani headers communicate authority, Inter body ensures readability at scale.</p></div></article>
+</div></section>
+<section id="testimonials" class="testimonials"><div class="grid"><h2 style="font-family:'Rajdhani',system-ui;font-weight:600;color:#fff;margin-bottom:calc(.65*var(--padding));font-size:2.2;padding-left:max(16,min(calc(var(--padding)*.5,var(--gutter))))">Client feedback</h2>
+<div class="tweet-row"><div class="client-info"><div class="client-avatar" style="background:#333;display:grid;place-items:center;color:#fff">@yementio</div><div><div class="name">Local Business Owner</div><div class="role">@yementio owner</div></div></div></div>
+<div class="tweet-row"><div class="client-info"><div class="client-avatar" style="background:#222;display:grid;place-items:center;color:#fff">@startup_co</div><div><div class="name">Tech CEO</div><div class="role">@startup founder</div></div></div></div>
+<div class="tweet-row"><div class="client-info"><div class="client-avatar" style="background:#111;display:grid;place-items:center;color:#fff">@design_studio</div><div><div class="name">Boutique Agency</div><div class="role">@studio partner</div></div></div></div>
+<div class="tweet-row"><div class="client-info"><div class="client-avatar" style="background:#0a0a0a;display:grid;place-items:center;color:#fff">@consulting_firm</div><div><div class="name">Consultant</div><div class="role">@consult advisor</div></div></div></div>
+<div class="tweet-row"><div class="client-info"><div class="client-avatar" style="background:#08090a;border:1px solid var(--border);display:grid;place-items:center;color:#444">🔒</div><div><div class="name">Privacy-first brand</div><div class="role">Anonymous founder</div></div></div></div>
+<div style="text-align:right;margin-top:calc(.5*var(--padding))"><a href="#contact" style="color:var(--accent);font-size:13;text-decoration:none">Request a quote →</a></div></div></section>
+<section id="demo" class="demo-section"><h2 style="font-family:'Rajdhani',system-ui;font-weight:600;margin:calc(2*var(--padding)) 0 var(--padding);padding-left:max(16,min(calc(var(--padding)*.5,var(--gutter))))">Explore demos</h2>
+<div class="demo-cards" style="--limit:max(32,calc(min(.8rem+.7vw,.4em + calc(.3*var(--padding)))));--gap:8;">
+<article class="demo-card" style="--margin:16px;"><div class="thumb">Demo preview</div><div class="details"><h3>Consulting Dashboard</h3><p>Project management + client portal</p><a href="#" class="demo-link">Preview →</a></div></article>
+<article class="demo-card" style="--margin:16px;"><div class="thumb">Demo preview 2</div><div class="details"><h3>Legal Practice Site</h3><p>Service pages + inquiry forms</p><a href="#" class="demo-link">Preview →</a></div></article>
+<article class="demo-card" style="--margin:16px;"><div class="thumb">Demo preview 3</div><div class="details"><h3>Architect Portfolio</h3><p>CASPIRE project showcase</p><a href="#" class="demo-link">Preview →</a></div></article>
+<article class="demo-card" style="--margin:16px;"><div class="thumb">Demo preview 4</div><div class="details"><h3>Industrial Equipment</h3><p>Product catalog + quotes</p><a href="#" class="demo-link">Preview →</a></div></article>
+<article class="demo-card" style="--margin:16px;"><div class="thumb">Demo preview 5</div><div class="details"><h3>Marketing Agency</h3><p>Campaign case studies</p><a href="#" class="demo-link">Preview →</a></div></article>
+<article class="demo-card" style="--margin:16px;"><div class="thumb">Demo preview 6</div><div class="details"><h3>Elevator Pitch Generator</h3><p>Interactive tool + templates</p><a href="#" class="demo-link">Preview →</a></div></article>
+<article class="demo-card" style="--margin:16px;"><div class="thumb">Demo preview 7</div><div class="details"><h3>Construction Project Site</h3><p>Progress reports + timelines</p><a href="#" class="demo-link">Preview →</a></div></article>
+<article class="demo-card" style="--margin:16px;"><div class="thumb">Demo preview 8</div><div class="details"><h3>E-commerce Microsite</h3><p>Product showcase + cart (static)</p><a href="#" class="demo-link">Preview →</a></div></article>
+</div><a href="#contact" style="display:inline-block;margin-top:var(--padding);width:max(200,min(calc(var(--limit)*1.2,var(--margins) + var(--gutter))))">View all demos</a>
+</section>
+<footer>© <span id="brand-year"></span> YEMENTIO — Static sites for local businesses · Privacy-first HTML · No tracking <script>document.getElementById('brand-year').textContent=new Date().toLocaleDateString(undefined,{year:'numeric'})</script></footer><div style="--padding:max(16,calc(.75rem + .6vw));--margins:0.4em;--gutter:0.25em;--spacing:8px;--limit:max(32,calc(.9rem+.85vw));--margin:16px;--height:42px;--width:1200px;--margins:28px;gap:.25em"><style>:root{--padding:clamp(max(16px,.5em + .75rem),calc(.6*var(--limit)),max(24,min(calc(var(--limit)*.25,var(--margins)+var(--gutter)))));html.lenis,p,iframe,video,audio,fieldset,figure,svg,picture,#brand-year,footer{margin:0 auto}body.lenis.lenis-smooth{scroll-behavior:auto}.lenis.lenis-scrolling iframe{pointer-events:none}#demo .demo-cards{justify-content:center}</style></div>
+</body></html>
